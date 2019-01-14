@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Text, View, Image,  StyleSheet, ScrollView,TouchableOpacity,Linking } from 'react-native';
 import { Button, Icon } from 'native-base';
@@ -11,25 +12,25 @@ class ContactusScreen extends React.Component {
   render() {
       return (
         <ScrollView>
-          <View style={{paddingTop:Constants.statusBarHeight,paddingBottom:20}}>
+          <View>
           
            <View style={{paddingTop:10}}>           
-           <Icon name='ios-call' style={{fontSize: 40, color: 'blue', textAlign: 'center'}} />
+           <Icon name='ios-call' style={{fontSize: 50, color: 'blue', textAlign: 'center'}} />
             <Text style={styles.title}>PHONE</Text>
             <TouchableOpacity onPress={() => Linking.openURL('tel:+91-9404507342')}>
               <Text style={styles.line}>
-                9404 507 342
+                +91-9404-507-342
               </Text>
             </TouchableOpacity>
             <TouchableOpacity onPress={() => Linking.openURL('tel:+91-9403612979')}>
               <Text style={styles.line}>
-                9403 612 979
+                +91-9403-612-979
               </Text>
             </TouchableOpacity>
            </View>
 
            <View style={{paddingTop:10}}>
-           <Icon name='ios-mail' style={{fontSize: 40, color: 'blue', textAlign: 'center'}} />
+           <Icon name='ios-mail' style={{fontSize: 50, color: 'blue', textAlign: 'center'}} />
             <Text style={styles.title}>EMAIL</Text>
             <TouchableOpacity onPress={() => Linking.openURL('mailto:atharva.puranik@viit.ac.in')}>
               <Text style={styles.line}>
@@ -37,8 +38,8 @@ class ContactusScreen extends React.Component {
               </Text>
             </TouchableOpacity>
             </View>
-           <View style={{paddingTop:10}}>
-           <Icon type="MaterialIcons" name="location-on" style={{fontSize: 40, color: 'blue', textAlign: 'center'}} />
+           <View style={{paddingTop:10,paddingBottom:10}}>
+           <Icon type="MaterialIcons" name="location-on" style={{fontSize: 50, color: 'blue', textAlign: 'center'}} />
             <Text style={styles.title}>ADDRESS</Text>
              <TouchableOpacity onPress={() => Linking.openURL("https://www.google.co.in/maps/dir/''/entrepreneurship+development+cell+viit/data=!4m5!4m4!1m0!1m2!1m1!1s0x3bc2eaf473dfa6d3:0x254f86fb9c3da40d?sa=X&ved=0ahUKEwjc_4z0qNPaAhVCPo8KHdqgBYQQ9RcIkgEwCw")}>
               <Text style={styles.line}>S.No.3 &amp; 4, Entrepreneurship Development </Text>
@@ -88,8 +89,8 @@ const styles=StyleSheet.create({
     justifyContent:'center',
     alignItems:'center',
     padding: 10,
-    marginLeft:8,
-    marginRight:8
+    marginLeft:10,
+    marginRight:10
   },
   textstyle:{
       color:'white',

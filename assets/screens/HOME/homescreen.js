@@ -12,11 +12,16 @@ import {
   CardItem,
   Center,
   Thumbnail,
-  Body,
-  Icon
+  Body
 } from 'native-base';
-import { Image, View, ImageBackground, TouchableOpacity} from 'react-native';
-export default class Home extends Component {
+import Ripple from 'react-native-material-ripple';
+import Icon from 'react-native-vector-icons/FontAwesome';
+import { createStackNavigator, createAppContainer } from 'react-navigation';
+import { Image, View, ImageBackground, TouchableOpacity, StyleSheet, Linking } from 'react-native';
+
+import Vishwapreneur from './VishwapreneurScreen';
+
+class Home extends Component {
   render() {
     return (
       <Container
@@ -26,7 +31,6 @@ export default class Home extends Component {
           FlexDirection: 'column',
           justifyContent: 'center',
         }}>
-        <Header />
         <Content padder>
           <View style={{ alignItems: 'center', marginTop: 50 }}>
             <Image
@@ -34,122 +38,148 @@ export default class Home extends Component {
               style={{ height: 200, width: 200 }}
             />
           </View>
+
           <Text>{'\n'}</Text>
+
           <View
             style={{
               flex: 1,
               alignItems: 'center',
             }}>
-            <H1>VISHWAPRENEUR</H1>
+            <H1 style={{ fontWeight: 'bold' }}>VISHWAPRENEUR</H1>
           </View>
           <Text>{'\n'}</Text>
-          <Card>
-            <CardItem
-              header
-              style={{
-                justifyContent: 'center',
-                borderRadius: 50,
-              }}>
-              <Text>About</Text>
-            </CardItem>
-            <CardItem
-              button
-              onPress={() => alert('Will be directed to another page')}>
-              <Body>
-                <Text>
-                  Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry. Lorem Ipsum has been the industry's
-                  standard dummy text ever since the 1500s, when an unknown
-                  printer took a galley of type and scrambled it to make a type
-                  specimen book. It has survived not only five centuries, but
-                  also the leap into electronic typesetting, remaining
-                  essentially unchanged. It was popularised in the 1960s with
-                  the release of Letraset sheets containing Lorem Ipsum
-                  passages, and more recently with desktop publishing software
-                  like Aldus PageMaker including versions of Lorem Ipsum.
+
+          <Button block onPress={() => Linking.openURL('https://www.edcviit.com/vishwapreneur/register.html')}
+            style={{ backgroundColor: 'rgb(0,140,0)', borderRadius: 25, marginHorizontal: 80, marginBottom: 30 }}>
+            <Text />
+            <Icon name="ticket" type='font-awesome' style={{
+              fontSize: 25,
+              color: 'white',
+            }} />
+            <Text style={{
+              fontSize: 20,
+              color: 'white',
+            }}>
+              Book Now
                 </Text>
-              </Body>
-            </CardItem>
-            <CardItem
-              footer
-              button
-              style={{ borderRadius: 50 }}
-              onPress={() => alert('Will be directed to another page')}>
-              <Text>
-                More Info{' '}
-                <Icon name="play" style={{ fontSize: 15, color: 'black' }} />
-              </Text>
-            </CardItem>
-          </Card>
-
-          {/* <View style={{ paddingBottom: 5, paddingHorizontal: 120 }}>
-            <Button dark rounded>
-              <Text />
-              <Icon name="ticket" style={{ fontSize: 22, color: 'white' }} />
-              <Text>Book Now</Text>
-              <Text />
-            </Button>
-          </View> */}
-
-          <Button iconLeft dark rounded>
-          <Icon name="ios-pricetag"  />
-            <Text>Settings</Text>
+            <Text />
           </Button>
-          
-             <Card>
+
+
+          <Card style={{ marginBottom: 20, borderRadius: 15 }}>
+            <Ripple rippleColor="rgb(60,60,60)" onPress={() => this.props.navigation.navigate('VishwapreneurScreen', {})}>
+
               <ImageBackground
-                source={require('./smart-sociothon1.jpg')}
+                source={require('../../images/background_small.png')} borderRadius={15}
                 style={{
                   height: 200,
                   width: null,
                   flex: 1,
-                  alignItems: 'center',
-                  justifyContent: 'center',
+                  justifyContent: 'space-evenly',
                 }}>
-                <Text
-                  style={{
-                    fontSize: 50,
-                    color: 'white',
-                  }}>
-                  Smart Sociothon
-                </Text>
-                <Text style={{ alignItems: 'center' }}>
-                  <Icon name="ios-play" style={{ fontSize: 30, color: 'white' }}
-                  />
-                </Text>
+                <Text /><Text />
+                <View style={{ alignItems: 'center', }}>
+                  <Text
+                    style={styles.textWithShadow}>
+                    About
+                  </Text>
+                  <Text
+                    style={styles.textWithShadow}>
+                    Vishwapreneur
+                  </Text>
+                </View>
+                <Text />
+                <View style={{ alignItems: 'flex-end', paddingRight: 20 }} >
+                  <Text>
+                    <Icon name="angle-right" style={{ fontSize: 35, color: 'white' }} />
+                  </Text>
+                </View>
               </ImageBackground>
-            </Card> 
+            </Ripple>
+          </Card>
 
-            <Card>
-            <CardItem header style={{ justifyContent: 'center', }}>
-              <Text>Entrepreneurship Development Cell, VIIT</Text>
-            </CardItem>
-            <CardItem button onPress={() => alert('Will be directed to another page')}>
-              <Body>
-                <Text>
-                  Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry. Lorem Ipsum has been the industry's
-                  standard dummy text ever since the 1500s, when an unknown
-                  printer took a galley of type and scrambled it to make a type
-                  specimen book. It has survived not only five centuries, but
-                  also the leap into electronic typesetting, remaining
-                  essentially unchanged. It was popularised in the 1960s with
-                  the release of Letraset sheets containing Lorem Ipsum
-                  passages, and more recently with desktop publishing software
-                  like Aldus PageMaker including versions of Lorem Ipsum.
+
+          <Card style={{ marginBottom: 20, borderRadius: 15 }}>
+            <Ripple rippleColor="rgb(200,200,200)">
+              <ImageBackground
+                source={require('./smart-sociothon1.jpg')} borderRadius={15}
+                style={{
+                  height: 200,
+                  width: null,
+                  flex: 1,
+                  justifyContent: 'space-evenly',
+                }}>
+                <Text /><Text />
+                <View style={{ alignItems: 'center', }}>
+                  <Text
+                    style={styles.textWithShadow}>
+                    Smart Sociothon
                 </Text>
-              </Body>
-            </CardItem>
-            <CardItem footer button onPress={() => alert('Will be directed to another page')}>
-              <Text>
-                More Info{' '}
-                <Icon name="play" style={{ fontSize: 15, color: 'black' }} />
-              </Text>
-            </CardItem>
-          </Card> 
+                </View>
+                <Text />
+                <View style={{ alignItems: 'flex-end', paddingRight: 20 }} >
+                  <Text>
+                    <Icon name="angle-right" style={{ fontSize: 35, color: 'white' }} />
+                  </Text>
+
+                </View>
+              </ImageBackground>
+            </Ripple>
+          </Card>
+
+          <Card style={{ marginBottom: 20, borderRadius: 15 }}>
+            <Ripple rippleColor="rgb(200,200,200)">
+              <ImageBackground
+                source={require('../../images/background-edc.jpg')} borderRadius={15}
+                style={{
+                  height: 200,
+                  width: null,
+                  flex: 1,
+                  justifyContent: 'space-evenly',
+                }}>
+                <Text /><Text />
+                <View style={{ alignItems: 'center', }}>
+                  <Text
+                    style={styles.textWithShadow}>
+                    Entrepreneurship
+                </Text>
+                  <Text
+                    style={styles.textWithShadow}>
+                    Development Cell
+                </Text>
+                </View>
+                <Text />
+                <View style={{ alignItems: 'flex-end', paddingRight: 20 }} >
+                  <Text>
+                    <Icon name="angle-right" style={{ fontSize: 35, color: 'white' }} />
+                  </Text>
+                </View>
+              </ImageBackground>
+            </Ripple>
+          </Card>
 
         </Content>
       </Container>
     );
   }
 }
+
+const AppStackNavigation = createStackNavigator({
+  HomeScreen: { screen: Home },
+  VishwapreneurScreen: { screen: Vishwapreneur }
+
+});
+
+export default createAppContainer(AppStackNavigation);
+
+
+const styles = StyleSheet.create({
+  textWithShadow: {
+    textShadowColor: 'rgba(60, 60, 60, .9)',
+    textShadowOffset: { width: 2, height: 2 },
+    fontSize: 40,
+    color: 'white',
+    fontWeight: 'bold'
+  }
+});
