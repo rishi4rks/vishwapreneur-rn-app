@@ -18,10 +18,10 @@ export default class ProfileScreen extends React.Component {
         style={{ backgroundColor: '#41474C', flex: 1, FlexDirection: 'column', justifyContent: 'center', }}>
 
         <Content>
-          <View style={{ alignItems: 'center', marginTop: 150 }}>
+          <View style={{ alignItems: 'center', marginTop: 70 }}>
             <Image
               source={require('../../images/vishwapreneur_logo.png')}
-              style={{ height: 100, width: 100 }}
+              style={{ height: 200, width: 200 }}
             />
           </View>
 
