@@ -5,18 +5,16 @@ import {
   StyleSheet,
   Image,
   ImageBackground,
-  iframe
+  StatusBar
 } from 'react-native';
 import {
   Content,
   Container,
   H1,
   H2,
-  H3,
   Button,
-  CardItem,
-  Body,
   Card,
+  Header
 } from 'native-base';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { createStackNavigator, createAppContainer } from 'react-navigation';
@@ -38,8 +36,6 @@ export default class Vishwapreneur extends React.Component {
 
     this.setState({ fontLoaded: true });
   }
-
-
   static navigationOptions = { header: null };
 
   render() {
@@ -50,9 +46,27 @@ export default class Vishwapreneur extends React.Component {
           flex: 1,
           FlexDirection: 'column',
           justifyContent: 'center',
+          paddingTop: Constants.statusBarHeight,
         }}>
+
+        <Header style={{ backgroundColor: 'white', elevation: 10 }}>
+          <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+            <StatusBar
+              barStyle='light-content'
+              translucent={false}
+            />
+            {
+              this.state.fontLoaded ? (
+                <Text style={{ fontFamily: 'Batmanforever', fontSize: 35, color: 'black' }}>
+                  VISHWAPRENEUR
+                </Text>
+              ) : null
+            }
+          </View>
+        </Header>
+
         <Content padder>
-          <View style={{ alignItems: 'center', marginTop: 50 }}>
+          <View style={{ alignItems: 'center', marginTop: 20 }}>
             <Image
               source={require('../../images/12345.png')}
               style={{ height: 200, width: 200 }}
@@ -101,11 +115,15 @@ export default class Vishwapreneur extends React.Component {
               style={styles.buttons}
               backgroundColor={'rgb(0,140,0)'}
               onPress={() => this.props.navigation.navigate('REGISTER')}>
+              <Icon name="ticket" type='font-awesome' style={{
+                fontSize: 22,
+                color: 'white',
+              }} />
               <Text
                 style={{
                   fontSize: 18,
                   color: 'white',
-                }}>
+                }}>{"\t"}
                 Book Now
               </Text>
             </Button>
@@ -113,22 +131,26 @@ export default class Vishwapreneur extends React.Component {
             <Button
               block
               style={styles.buttons}
-              onPress={() => { this.props.navigation.navigate('OPENFLOOR', {}); }}>
+              onPress={() => this.props.navigation.navigate('OPENFLOOR')}>
+              <Icon name="users" type='font-awesome' style={{
+                fontSize: 22,
+                color: 'white',
+              }} />
               <Text
                 style={{
                   fontSize: 18,
                   color: 'white',
-                }}>
+                }}>{"\t"}
                 Openfloor
               </Text>
             </Button>
           </View>
 
           <View style={{ alignItems: 'center', paddingBottom: 15 }}>
-            <H2 style={{ fontWeight: 'bold' }}>About Us</H2>
+            <H1 style={{ fontWeight: 'bold' }}>About Us</H1>
           </View>
           <View style={{ paddingHorizontal: 15, borderBottomColor: '#aaaaaa', borderBottomWidth: 1, alignSelf: 'stretch' }}>
-            <Text style={{ fontSize: 16, textAlign: 'center', paddingBottom: 15 }}>
+            <Text style={{ fontSize: 18, textAlign: 'center', paddingBottom: 15 }}>
               Vishwapreneur is a National Level Entrepreneurship Convention — an
               event designed to inspire, invigorate and innovate ideas,
               businesses and dreams in all aspects of entrepreneurship. Call it
@@ -263,9 +285,9 @@ const styles = StyleSheet.create({
     fontWeight: 'bold'
   },
   contentFont: {
-    textShadowColor: 'rgba(60, 60, 60, .9)',
+    textShadowColor: 'rgba(60, 60, 60, 1)',
     textShadowOffset: { width: 2, height: 2 },
-    fontSize: 15,
+    fontSize: 17,
     color: 'white',
     fontWeight: 'bold',
     textAlign: 'center'
@@ -274,6 +296,5 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgb(0,40,180)',
     borderRadius: 25,
     padding: 15,
-  },
-  
+  }
 });

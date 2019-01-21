@@ -2,6 +2,7 @@ import React from 'react';
 import { Text, View } from 'react-native';
 import { createBottomTabNavigator, createAppContainer } from 'react-navigation';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import Icon from 'react-native-vector-icons/FontAwesome';
 import HomeScreen from './assets/screens/HOME/homescreen';
 import ProfileScreen from './assets/screens/PROFILE/profilescreen';
 import InstructionsScreen from './assets/screens/INSTRUCTIONS/instructionscreen';
@@ -10,10 +11,10 @@ import ContactusScreen from './assets/screens/CONTACT/contactscreen';
 
 const TabNavigator = createBottomTabNavigator(
   {
-  HOME: { screen: HomeScreen },
-  PROFILE: { screen: ProfileScreen },
-  INSTRUCTIONS: { screen: InstructionsScreen },
-  CONTACTUS: { screen: ContactusScreen },
+    HOME: { screen: HomeScreen },
+    PROFILE: { screen: ProfileScreen },
+    INSTRUCTIONS: { screen: InstructionsScreen },
+    CONTACTUS: { screen: ContactusScreen },
   },
   {
     defaultNavigationOptions: ({ navigation }) => ({
@@ -34,10 +35,11 @@ const TabNavigator = createBottomTabNavigator(
         // icon component from react-native-vector-icons
         return <Ionicons name={iconName} size={horizontal ? 20 : 25} color={tintColor} />;
       },
-    }),
+    }
+    ),
     tabBarOptions: {
-      activeTintColor: 'blue',
-      inactiveTintColor: 'gray',
+      activeTintColor: 'black',
+      inactiveTintColor: '#6C716E',
     },
   }
   );

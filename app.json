@@ -10,11 +10,11 @@
     ],
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/images/12345.png",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/images/12345.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#D1DED7"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -24,9 +24,6 @@
     ],
     "ios": {
       "supportsTablet": true
-    },
-    "android": {
-      "package": "com.vishwapreneur.www.vishwapreneur"
     },
     "description": ""
   }

@@ -1,9 +1,7 @@
-
 import React from 'react';
-import { Text, View, Image, StyleSheet, ScrollView, TouchableOpacity, Linking } from 'react-native';
-import { Button, Icon, Container, Content, Header } from 'native-base';
+import { Text, View, StyleSheet, ScrollView, TouchableOpacity, Linking, StatusBar } from 'react-native';
+import {Icon, Container, Content, Header } from 'native-base';
 import { createStackNavigator, createAppContainer } from 'react-navigation';
-import { Ionicons } from 'react-native-vector-icons/Ionicons';
 import { Constants, Font } from 'expo';
 import Developer from './Developerscreen'
 
@@ -29,19 +27,23 @@ class ContactusScreen extends React.Component {
           flex: 1,
           FlexDirection: 'column',
           justifyContent: 'center',
+          paddingTop: Constants.statusBarHeight
         }}>
-        <Header transparent>
-        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-  {
-    this.state.fontLoaded ? (
-      <Text style={{ fontFamily: 'Batmanforever', fontSize: 35, color: '#000'  }}>
-        VISHWAPRENEUR 
-      </Text>
-    ) : null
-  }
-</View>
-
-        </Header>
+          <Header style={{ backgroundColor: 'white', elevation: 10 }}>
+            <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+              <StatusBar
+                barStyle='light-content'
+                translucent={false}
+              />
+              {
+                this.state.fontLoaded ? (
+                  <Text style={{ fontFamily: 'Batmanforever', fontSize: 35, color: 'black' }}>
+                    VISHWAPRENEUR
+                </Text>
+                ) : null
+              }
+            </View>
+          </Header>
           <Content>
             <View>
 
@@ -103,6 +105,9 @@ const AppStackNavigation = createStackNavigator({
 export default createAppContainer(AppStackNavigation);
 
 const styles = StyleSheet.create({
+  wrapper: {
+    paddingTop: Constants.statusBarHeight,
+  },
   title: {
     textAlign: 'center',
     fontWeight: 'bold',
