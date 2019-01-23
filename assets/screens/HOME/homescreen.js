@@ -28,6 +28,8 @@ class Home extends Component {
   async componentDidMount() {
     await Font.loadAsync({
       'Batmanforever': require('../../fonts/batmfa.ttf'),
+      'Roboto': require("native-base/Fonts/Roboto.ttf"),
+      'Roboto_medium': require("native-base/Fonts/Roboto_medium.ttf")
     });
 
     this.setState({ fontLoaded: true });
@@ -37,6 +39,8 @@ class Home extends Component {
   render() {
     return (
       <SafeAreaView style={{ flex: 1, backgroundColor: '#fff' }}>
+      {
+        this.state.fontLoaded ? (
         <Container
           style={{
             backgroundColor: '#D1DED7',
@@ -63,7 +67,8 @@ class Home extends Component {
           </Header>
 
           <ActionButton buttonColor="rgb(240,50,40)" style={styles.actionButtonStyle}
-            icon={<Icon name='ticket' type='FontAwesome' style={{ fontSize: 22, color: 'white' }} />}
+            renderIcon={<Icon name='ticket' type='FontAwesome' style={{ fontSize: 22, color: 'white' }} />}
+            renderIcon={active => active ? (<Icon name='ticket' type='FontAwesome' style={{ fontSize: 22, color: 'white' }} /> ) : (<Icon name='ticket' type='FontAwesome' style={{ fontSize: 22, color: 'white' }} />)}
             onPress={() => this.props.navigation.navigate('REGISTER')}
           />
 
@@ -190,6 +195,8 @@ class Home extends Component {
             </Card>
           </Content>
         </Container>
+        ) : null
+      }
       </SafeAreaView>
     );
   }
