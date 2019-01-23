@@ -11,13 +11,12 @@ import {
   Content,
   Container,
   H1,
-  H2,
   Button,
   Card,
-  Header
+  Header,
+  Icon
 } from 'native-base';
-import Icon from 'react-native-vector-icons/FontAwesome';
-import { createStackNavigator, createAppContainer } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation';
 import { Constants, Font } from 'expo';
 
 import register from './register';
@@ -57,7 +56,7 @@ export default class Vishwapreneur extends React.Component {
             />
             {
               this.state.fontLoaded ? (
-                <Text style={{ fontFamily: 'Batmanforever', fontSize: 35, color: 'black' }}>
+                <Text style={{ fontFamily: 'Batmanforever', fontSize: 25, color: 'black' }}>
                   VISHWAPRENEUR
                 </Text>
               ) : null
@@ -115,7 +114,7 @@ export default class Vishwapreneur extends React.Component {
               style={styles.buttons}
               backgroundColor={'rgb(0,140,0)'}
               onPress={() => this.props.navigation.navigate('REGISTER')}>
-              <Icon name="ticket" type='font-awesome' style={{
+              <Icon name="ticket" type='FontAwesome' style={{
                 fontSize: 22,
                 color: 'white',
               }} />
@@ -132,7 +131,7 @@ export default class Vishwapreneur extends React.Component {
               block
               style={styles.buttons}
               onPress={() => this.props.navigation.navigate('OPENFLOOR')}>
-              <Icon name="users" type='font-awesome' style={{
+              <Icon name="users" type='FontAwesome' style={{
                 fontSize: 22,
                 color: 'white',
               }} />

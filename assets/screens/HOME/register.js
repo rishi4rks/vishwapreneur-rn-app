@@ -40,7 +40,7 @@ export default class App extends Component {
             />
             {
               this.state.fontLoaded ? (
-                <Text style={{ fontFamily: 'Batmanforever', fontSize: 35, color: 'black' }}>
+                <Text style={{ fontFamily: 'Batmanforever', fontSize: 25, color: 'black' }}>
                   VISHWAPRENEUR
                 </Text>
               ) : null

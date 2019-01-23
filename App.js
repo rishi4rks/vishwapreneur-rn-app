@@ -1,8 +1,7 @@
 import React from 'react';
-import { Text, View } from 'react-native';
 import { createBottomTabNavigator, createAppContainer } from 'react-navigation';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import Icon from 'react-native-vector-icons/FontAwesome';
+
 import HomeScreen from './assets/screens/HOME/homescreen';
 import ProfileScreen from './assets/screens/PROFILE/profilescreen';
 import InstructionsScreen from './assets/screens/INSTRUCTIONS/instructionscreen';

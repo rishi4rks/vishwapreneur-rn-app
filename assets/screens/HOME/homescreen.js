@@ -6,12 +6,13 @@ import {
   Button,
   Text,
   Card,
+  Icon
 } from 'native-base';
 import Ripple from 'react-native-material-ripple';
-import Icon from 'react-native-vector-icons/FontAwesome';
 import { createStackNavigator, createAppContainer } from 'react-navigation';
 import { Image, View, ImageBackground, StyleSheet, StatusBar, SafeAreaView } from 'react-native';
 import { Constants, Font } from 'expo';
+import ActionButton from 'react-native-action-button';
 
 import Vishwapreneur from './VishwapreneurScreen';
 import edcviit from './edcviitscreen';
@@ -47,13 +48,13 @@ class Home extends Component {
 
           <Header style={{ backgroundColor: 'white', elevation: 10 }}>
             <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-              <StatusBar  
+              <StatusBar
                 barStyle='light-content'
-                translucent={false} 
+                translucent={false}
               />
               {
                 this.state.fontLoaded ? (
-                  <Text style={{ fontFamily: 'Batmanforever', fontSize: 35, color: 'black' }}>
+                  <Text style={{ fontFamily: 'Batmanforever', fontSize: 25, color: 'black' }}>
                     VISHWAPRENEUR
                 </Text>
                 ) : null
@@ -61,10 +62,15 @@ class Home extends Component {
             </View>
           </Header>
 
+          <ActionButton buttonColor="rgb(240,50,40)" style={styles.actionButtonStyle}
+            icon={<Icon name='ticket' type='FontAwesome' style={{ fontSize: 22, color: 'white' }} />}
+            onPress={() => this.props.navigation.navigate('REGISTER')}
+          />
+
           <Content padder>
             <View style={{ alignItems: 'center', marginTop: 20 }}>
               <Image
-                source={require('../../images/vishwapreneur_logo.png')}
+                source={require('../../images/12345.png')}
                 style={{ height: 200, width: 200 }}
               />
             </View>
@@ -74,7 +80,7 @@ class Home extends Component {
             <Button block onPress={() => this.props.navigation.navigate('REGISTER')}
               style={{ backgroundColor: 'rgb(0,140,0)', borderRadius: 25, marginHorizontal: 80, marginBottom: 25, elevation: 3 }}>
               <Text />
-              <Icon name="ticket" type='font-awesome' style={{
+              <Icon name="ticket" type='FontAwesome' style={{
                 fontSize: 22,
                 color: 'white',
               }} />
@@ -86,7 +92,7 @@ class Home extends Component {
                 </Text>
               <Text />
             </Button>
-            
+
 
             <Card style={{ marginBottom: 20, borderRadius: 15 }}>
               <Ripple rippleColor="rgb(60,60,60)" onPress={() => this.props.navigation.navigate('VishwapreneurScreen', {
@@ -116,7 +122,7 @@ class Home extends Component {
                   <Text />
                   <View style={{ alignItems: 'flex-end', paddingRight: 20 }} >
                     <Text>
-                      <Icon name="angle-right" style={{ fontSize: 35, color: 'white' }} />
+                      <Icon name="ios-arrow-forward" type="Ionicons" style={{ fontSize: 35, color: 'white' }} />
                     </Text>
                   </View>
                 </ImageBackground>
@@ -127,7 +133,7 @@ class Home extends Component {
             <Card style={{ marginBottom: 20, borderRadius: 15 }}>
               <Ripple rippleColor="rgb(200,200,200)" onPress={() => this.props.navigation.navigate('SMARTSOCIOTHON')}>
                 <ImageBackground
-                  source={require('./smart-sociothon1.jpg')} borderRadius={15}
+                  source={require('../../images/smart-sociothon1.jpg')} borderRadius={15}
                   style={{
                     height: 200,
                     width: null,
@@ -144,7 +150,7 @@ class Home extends Component {
                   <Text />
                   <View style={{ alignItems: 'flex-end', paddingRight: 20 }} >
                     <Text>
-                      <Icon name="angle-right" style={{ fontSize: 35, color: 'white' }} />
+                      <Icon name="ios-arrow-forward" type="Ionicons" style={{ fontSize: 35, color: 'white' }} />
                     </Text>
 
                   </View>
@@ -176,7 +182,7 @@ class Home extends Component {
                   <Text />
                   <View style={{ alignItems: 'flex-end', paddingRight: 20 }} >
                     <Text>
-                      <Icon name="angle-right" style={{ fontSize: 35, color: 'white' }} />
+                      <Icon name="ios-arrow-forward" type="Ionicons" style={{ fontSize: 35, color: 'white' }} />
                     </Text>
                   </View>
                 </ImageBackground>
@@ -223,4 +229,13 @@ const styles = StyleSheet.create({
     right: 0,
     elevation: 5
   },
+  actionButtonIcon: {
+    fontSize: 20,
+    height: 25,
+    color: 'white',
+  },
+  actionButtonStyle: {
+    zIndex: 1,
+
+  }
 });

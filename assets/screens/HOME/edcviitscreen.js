@@ -28,30 +28,30 @@ export default class edcviit extends Component {
 
   render() {
     return (
-        <Container style={{ paddingTop: Constants.statusBarHeight }}>
-          <Header style={{ backgroundColor: 'white', elevation: 10 }}>
-            <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-              <StatusBar
-                barStyle='light-content'
-                translucent={false}
-              />
-              {
-                this.state.fontLoaded ? (
-                  <Text style={{ fontFamily: 'Batmanforever', fontSize: 35, color: 'black' }}>
-                    VISHWAPRENEUR
+      <Container style={{ paddingTop: Constants.statusBarHeight }}>
+        <Header style={{ backgroundColor: 'white', elevation: 10 }}>
+          <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+            <StatusBar
+              barStyle='light-content'
+              translucent={false}
+            />
+            {
+              this.state.fontLoaded ? (
+                <Text style={{ fontFamily: 'Batmanforever', fontSize: 25, color: 'black' }}>
+                  VISHWAPRENEUR
                 </Text>
-                ) : null
-              }
-            </View>
-          </Header>
-          <WebView
-            style={styles.webview}
-            source={{ uri: 'https://www.edcviit.com/' }}
-            javaScriptEnabled={true}
-            domStorageEnabled={true}
-            startInLoadingState={false}
-            scalesPageToFit={true} />
-        </Container>
+              ) : null
+            }
+          </View>
+        </Header>
+        <WebView
+          style={styles.webview}
+          source={{ uri: 'https://www.edcviit.com/' }}
+          javaScriptEnabled={true}
+          domStorageEnabled={true}
+          startInLoadingState={false}
+          scalesPageToFit={true} />
+      </Container>
     );
   }
 }
