@@ -4,13 +4,13 @@ import {
     View,
     Text,
     Dimensions,
-    WebView,
     StatusBar,
     SafeAreaView,
     ScrollView
 } from 'react-native';
 import { Header, Container } from 'native-base';
 import { Constants, Font } from 'expo';
+import { WebView } from 'react-native';
 
 const deviceHeight = Dimensions.get('window').height;
 const deviceWidth = Dimensions.get('window').width;

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Text, View, StyleSheet, ScrollView, TouchableOpacity, Linking, StatusBar } from 'react-native';
-import { Icon, Container, Content, Header } from 'native-base';
+import { Icon, Container, Content, Header, Button } from 'native-base';
 import { createStackNavigator, createAppContainer } from 'react-navigation';
 import { Constants, Font } from 'expo';
 import Ripple from 'react-native-material-ripple';
@@ -24,13 +24,13 @@ class ContactusScreen extends React.Component {
   render() {
     return (
       <Container style={{
-        backgroundColor: '#D1DED7',
+        backgroundColor: '#282828',
         flex: 1,
         FlexDirection: 'column',
         justifyContent: 'center',
-        paddingTop: Constants.statusBarHeight
+        paddingTop: Constants.statusBarHeight,
       }}>
-        <Header style={{ backgroundColor: 'white', elevation: 10 }}>
+        <Header style={{ backgroundColor: '#555656', elevation: 10 }}>
           <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
             <StatusBar
               barStyle='light-content'
@@ -38,58 +38,70 @@ class ContactusScreen extends React.Component {
             />
             {
               this.state.fontLoaded ? (
-                <Text style={{ fontFamily: 'Batmanforever', fontSize: 25, color: 'black' }}>
+                <Text style={{ fontFamily: 'Batmanforever', fontSize: 25, color: 'white' }}>
                   VISHWAPRENEUR
                 </Text>
               ) : null
             }
           </View>
         </Header>
-        <Content>
+        <Content style={{ paddingHorizontal: 12, paddingTop: 20, paddingBottom: 30 }}>
           <View>
 
-            <View style={{ paddingTop: 10 }}>
-              <Icon name='ios-call' style={{ fontSize: 50, color: 'blue', textAlign: 'center' }} />
+            <View style={{ paddingHorizontal: 15, paddingVertical: 10, borderBottomColor: '#aaaaaa', borderBottomWidth: 1 }}>
+              <Icon name='ios-call' style={{ fontSize: 50, color: '#224DB8', textAlign: 'center' }} />
               <Text style={styles.title}>PHONE</Text>
-              <TouchableOpacity onPress={() => Linking.openURL('tel:+91-9404507342')}>
+              <TouchableOpacity onPress={() => Linking.openURL('tel:+91-8788963858')}>
                 <Text style={styles.line}>
-                  +91-9404-507-342
+                  +91 87889 63858
               </Text>
               </TouchableOpacity>
-              <TouchableOpacity onPress={() => Linking.openURL('tel:+91-9403612979')}>
+              <TouchableOpacity onPress={() => Linking.openURL('tel:+91-9860177674')}>
                 <Text style={styles.line}>
-                  +91-9403-612-979
+                  +91 98601 77674
               </Text>
               </TouchableOpacity>
             </View>
 
-            <View style={{ paddingTop: 10 }}>
-              <Icon name='ios-mail' style={{ fontSize: 50, color: 'blue', textAlign: 'center' }} />
+            <View style={{ paddingHorizontal: 15, paddingVertical: 10, borderBottomColor: '#aaaaaa', borderBottomWidth: 1 }}>
+              <TouchableOpacity onPress={() => Linking.openURL('mailto:vishwapreneur@gmail.com')}>
+                <Icon name='ios-mail' style={{ fontSize: 50, color: '#D44638', textAlign: 'center' }} />
+              </TouchableOpacity>
               <Text style={styles.title}>EMAIL</Text>
-              <TouchableOpacity onPress={() => Linking.openURL('mailto:atharva.puranik@viit.ac.in')}>
+              <TouchableOpacity onPress={() => Linking.openURL('mailto:vishwapreneur@gmail.com')}>
                 <Text style={styles.line}>
-                  atharva.puranik@viit.ac.in
+                  vishwapreneur@gmail.com
               </Text>
               </TouchableOpacity>
             </View>
-            <View style={{ paddingTop: 10, paddingBottom: 10 }}>
-              <Icon type="MaterialIcons" name="location-on" style={{ fontSize: 50, color: 'blue', textAlign: 'center' }} />
+
+            <View style={{ paddingHorizontal: 15, paddingVertical: 10, borderBottomColor: '#aaaaaa', borderBottomWidth: 1 }}>
+              <TouchableOpacity onPress={() => Linking.openURL("https://www.google.co.in/maps/dir/''/entrepreneurship+development+cell+viit/data=!4m5!4m4!1m0!1m2!1m1!1s0x3bc2eaf473dfa6d3:0x254f86fb9c3da40d?sa=X&ved=0ahUKEwjc_4z0qNPaAhVCPo8KHdqgBYQQ9RcIkgEwCw")}>
+                <Icon type="MaterialIcons" name="location-on" style={{ fontSize: 50, color: '#0F9D58', textAlign: 'center' }} />
+              </TouchableOpacity>
               <Text style={styles.title}>ADDRESS</Text>
               <TouchableOpacity onPress={() => Linking.openURL("https://www.google.co.in/maps/dir/''/entrepreneurship+development+cell+viit/data=!4m5!4m4!1m0!1m2!1m1!1s0x3bc2eaf473dfa6d3:0x254f86fb9c3da40d?sa=X&ved=0ahUKEwjc_4z0qNPaAhVCPo8KHdqgBYQQ9RcIkgEwCw")}>
-                <Text style={styles.line}>S.No.3 &amp; 4, Entrepreneurship Development </Text>
-                <Text style={styles.line}>Cell, VIIT, Kondhwa BK., Pune, </Text>
-                <Text style={styles.line}>Maharashtra 411048</Text>
+                <Text style={styles.line}>S.No.3 &amp; 4, Entrepreneurship Development Cell, VIIT, Kondhwa BK., Pune, Maharashtra 411048</Text>
               </TouchableOpacity>
             </View>
           </View>
 
-          <Ripple onPress={() => this.props.navigation.navigate('Developers', {})}>
-            <View style={styles.button}>
-              <Text style={styles.textstyle}>
-                Developers
-            </Text>
-            </View>
-          </Ripple>
+          <Button
+            block
+            style={styles.buttons}
+            onPress={() => this.props.navigation.navigate('Developers', {})}>
+            <Text
+              style={{
+                fontSize: 20,
+                color: 'white',
+              }}>
+              Developers
+              </Text>
+            <Icon name="code" type='Entypo' style={{
+              fontSize: 22,
+              color: 'white',
+            }} />
+          </Button>
         </Content>
       </Container>
     );
@@ -112,11 +124,13 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontWeight: 'bold',
     fontSize: 25,
+    color: 'white'
   },
   line: {
     textAlign: 'center',
     fontSize: 22,
     paddingTop: 5,
+    color: 'white'
   },
   button: {
     borderColor: '#87908B',
@@ -126,14 +140,25 @@ const styles = StyleSheet.create({
     height: 40,
     justifyContent: 'center',
     alignItems: 'center',
-    padding: 10,
+    padding: 15,
     marginLeft: 10,
     marginRight: 10,
-    marginTop: 20
+    marginTop: 20,
+    marginBottom: 20,
+    paddingVertical: 20
   },
   textstyle: {
     color: 'white',
     fontWeight: 'bold',
-    fontSize: 20
+    fontSize: 20,
+  },
+  buttons: {
+    backgroundColor: 'rgba(156,153,152,.29)',
+    borderRadius: 15,
+    padding: 7,
+    textAlign: 'center',
+    alignItems: 'center',
+    margin: 20,
+    marginBottom: 50,
   }
 });

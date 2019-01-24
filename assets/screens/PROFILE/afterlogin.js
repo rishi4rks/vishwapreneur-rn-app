@@ -1,78 +1,107 @@
-import React, { Component } from 'react';
-import { Image, View, Text } from 'react-native';
-import {
-  Container,
-  Header,
-  H1,
-  H3,
-  Content,
-  Form,
-  Item,
-  Label,
-  Input,
-  Button,
-  ScrollView,
-  Icon,
-  H2
-} from 'native-base';
-import Ripple from 'react-native-material-ripple';
-import { createStackNavigator, createAppContainer } from 'react-navigation';
+import * as React from 'react';
+import { Text, View, StyleSheet, StatusBar } from 'react-native';
+import { Constants, Font } from 'expo';
+import { Container, Content, Header } from 'native-base';
 
-import Profile2Screen from '../PROFILE/profile2screen';
-
-class ProfileScreen extends React.Component {
+export default class afterlogin extends React.Component {
   static navigationOptions = { header: null };
+  state = {
+    fontLoaded: false,
+  };
+  async componentDidMount() {
+    await Font.loadAsync({
+      'Batmanforever': require('../../fonts/batmfa.ttf'),
+    });
+
+    this.setState({ fontLoaded: true });
+  }
   render() {
     return (
-       // <Header><H1>VISHWAPRENEUR</H1></Header>
-      <Container style={{alignItems:'center',justifyContent:'center',backgroundColor:'white'}}> 
-        <Content style={{paddingTop:30}}>
-          
-          <View
-            style={{
-              flex: 1,
-              alignItems: 'center',
-              paddingTop:10,
-              paddingBottom:20
-            }}>
-            <H1>Welcome,Username</H1>
-            <H3>Manifest the next with VISHWAPRENEUR</H3>
+      <Container
+        style={{
+          backgroundColor: '#282828',
+          flex: 1,
+          FlexDirection: 'column',
+          justifyContent: 'center',
+          paddingTop: Constants.statusBarHeight,
+        }}>
+        <Header style={{ backgroundColor: '#555656', elevation: 10 }}>
+          <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+            <StatusBar
+              barStyle='light-content'
+              translucent={false}
+            />
+            {
+              this.state.fontLoaded ? (
+                <Text style={{ fontFamily: 'Batmanforever', fontSize: 25, color: 'white' }}>
+                  VISHWAPRENEUR
+                </Text>
+              ) : null
+            }
           </View>
-          
-          <View style={{flex:1,borderColor:'black',borderWidth:1,borderRadius:10,justifyContent:'center',alignItems:'center'}}>
-          <View style={{}}>
-              <Text style={{fontSize:20,fontWeight:'bold'}}>
-                Regular Pass
+        </Header>
+
+        <Content style={{ padding: 25 }}>
+        
+          <View style={{ alignItems: 'center' }}>
+            <Text style={styles.textWithShadow}>Hi Rishikesh</Text>
+          </View>
+
+          <View style={{ paddingBottom: 15, paddingLeft: 15, marginVertical: 25 }}>
+            <Text style={styles.content}>Receipt no. : </Text>
+            <Text style={styles.content}>Phone : </Text>
+            <Text style={styles.content}>Category : </Text>
+            <Text style={styles.content}>Email : </Text>
+            <Text style={styles.content}>Amount remaining : </Text>
+          </View>
+
+          <View style={{ paddingHorizontal: 25, borderBottomColor: '#aaaaaa', borderBottomWidth: 1.5 }} />
+
+          <View style={styles.incontainer}>
+            <View style={{ alignItems: 'center', justifyContent: 'center' }}>
+              <Text style={styles.passcontent}>
+                Your pass will appear here on the day of the event.
               </Text>
             </View>
-            <Icon type="MaterialCommunityIcons" name='ticket-account' style={{fontSize: 100, color: 'silver',margin: 5}}/>
-            <H3 style={{padding:5}}>Balance :XXX</H3>
-            <H3 style={{padding:5}}>Name :Sample Full Name</H3>
-            <H3 style={{padding:5}}>Reciept No :####</H3>
-            <H3 style={{padding:5}}>Unique Id :######</H3>
           </View>
-          <Text>{'\n'}</Text>
-          <View style={{flex:1,borderColor:'black',borderWidth:1,borderRadius:10,justifyContent:'center',alignItems:'center'}}>
-            <View style={{}}>
-              <Text style={{fontSize:20,fontWeight:'bold'}}>
-                VIP Pass
-              </Text>
-            </View>
-            <Icon type="MaterialCommunityIcons" name='ticket-account' style={{fontSize: 100, color: 'gold',margin: 5}}/>
-            <H3 style={{padding:5}}>Name :Sample Full nAme</H3>
-            <H3 style={{padding:5}}>Reciept No :####</H3>
-            <H3 style={{padding:5}}>Unique Id :######</H3>
-          </View>
-          
         </Content>
       </Container>
-    )
+    );
   }
 }
-const AppStackNavigation=createStackNavigator({
-  Profile :{screen: ProfileScreen},
-  Login :{screen: Profile2Screen}
-  
-});
 
-export default createAppContainer(AppStackNavigation);
+const styles = StyleSheet.create({
+  textWithShadow: {
+    textShadowColor: 'rgba(250, 250, 250, .5)',
+    textShadowOffset: { width: -1, height: 1 },
+    fontSize: 35,
+    color: 'white',
+    fontWeight: '500',
+  },
+  content: {
+    fontWeight: '200',
+    color: 'white',
+    fontSize: 18,
+    paddingBottom: 10,
+  },
+  incontainer: {
+    flex: 1,
+    flexDirection: 'column',
+    justifyContent: 'flex-start',
+    borderColor: '#F97F51',
+    borderStyle: 'dashed',
+    borderWidth: 5,
+    borderRadius: 7,
+    position: 'relative',
+    padding: 100,
+    marginTop: 50,
+    backgroundColor: '#444',
+    marginBottom: 50,
+  },
+  passcontent: {
+    fontSize: 18,
+    textAlign: 'center',
+    paddingBottom: 15,
+    color: 'gray',
+  },
+});

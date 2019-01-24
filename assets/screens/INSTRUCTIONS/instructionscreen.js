@@ -27,13 +27,13 @@ export default class InstructionsScreen extends Component {
   render() {
     return (
       <Container style={{
-        backgroundColor: '#D1DED7',
+        backgroundColor: '#282828',
         flex: 1,
         FlexDirection: 'column',
         justifyContent: 'center',
         paddingTop: Constants.statusBarHeight,
       }}>
-        <Header style={{ backgroundColor: 'white', elevation: 10 }}>
+        <Header style={{ backgroundColor: '#555656', elevation: 10 }}>
           <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
             <StatusBar
               barStyle='light-content'
@@ -41,7 +41,7 @@ export default class InstructionsScreen extends Component {
             />
             {
               this.state.fontLoaded ? (
-                <Text style={{ fontFamily: 'Batmanforever', fontSize: 25, color: 'black' }}>
+                <Text style={{ fontFamily: 'Batmanforever', fontSize: 25, color: 'white' }}>
                   VISHWAPRENEUR
                 </Text>
               ) : null
@@ -60,22 +60,22 @@ export default class InstructionsScreen extends Component {
           </View>
           <List>
             <ListItem style={styles.hrbreak}>
-              <Text style={{ fontWeight: 'bold' }}>» Steps to be followed by participants for logging in:</Text>
+              <Text style={styles.details} fontWeight="bold">» Steps to be followed by participants for logging in:</Text>
             </ListItem>
             <ListItem style={styles.hrbreak}>
-              <Text>1)  Username: firstname_recirptno (Ex. aditya_007){"\n"}{"\t"}{"\t"} Default Password: vp_2019</Text>
+              <Text style={styles.details}>1)  Username: firstname_recieptno (Ex. aditya_007){"\n"}{"\t"}{"\t"} Default Password: vp_2019</Text>
             </ListItem>
             <ListItem style={styles.hrbreak}>
-              <Text>2)  Check your details in profile.</Text>
+              <Text style={styles.details}>2)  Check your details in profile.</Text>
             </ListItem>
             <ListItem style={styles.hrbreak}>
-              <Text>3)  Update information or password if required.</Text>
+              <Text style={styles.details}>3)  Update information or password if required.</Text>
             </ListItem>
             <ListItem style={styles.hrbreak}>
-              <Text>4)  App is mandatory on the day of the event.</Text>
+              <Text style={styles.details}>4)  App is mandatory on the day of the event.</Text>
             </ListItem>
             <ListItem style={styles.hrbreak}>
-              <Text>5)  Pass will be generated on the day of the event after reporting.</Text>
+              <Text style={styles.details}>5)  Pass will be generated on the day of the event after reporting.</Text>
             </ListItem>
           </List>
         </Content>
@@ -87,7 +87,7 @@ export default class InstructionsScreen extends Component {
 const styles = StyleSheet.create({
   hrbreak: {
     borderBottomColor: '#aaaaaa',
-    borderBottomWidth: 1
+    borderBottomWidth: 1,
   },
   inststyle: {
     fontSize: 26,
@@ -96,6 +96,12 @@ const styles = StyleSheet.create({
     borderLeftWidth: 1,
     borderRightColor: '#151716',
     borderRightWidth: 1,
-    paddingHorizontal: 15
+    paddingHorizontal: 15,
+    color: 'white',
+    borderLeftColor: 'white',
+    borderRightColor: 'white'
   },
+  details: {
+    color: 'white'
+  }
 });

@@ -11,7 +11,7 @@ import ContactusScreen from './assets/screens/CONTACT/contactscreen';
 const TabNavigator = createBottomTabNavigator(
   {
     HOME: { screen: HomeScreen },
-    PROFILE: { screen: ProfileScreen },
+    PASS: { screen: ProfileScreen },
     INSTRUCTIONS: { screen: InstructionsScreen },
     CONTACTUS: { screen: ContactusScreen },
   },
@@ -22,8 +22,8 @@ const TabNavigator = createBottomTabNavigator(
         let iconName;
         if (routeName === 'HOME') {
           iconName = `ios-home`;
-        } else if (routeName === 'PROFILE') {
-          iconName = `ios-person`;
+        } else if (routeName === 'PASS') {
+          iconName = `ios-key`;
         } else if (routeName === 'INSTRUCTIONS') {
           iconName = `ios-information-circle`;
         } else if (routeName === 'CONTACTUS') {
@@ -37,8 +37,10 @@ const TabNavigator = createBottomTabNavigator(
     }
     ),
     tabBarOptions: {
-      activeTintColor: 'black',
-      inactiveTintColor: '#6C716E',
+      activeTintColor: '#E1E1E1',
+      inactiveTintColor: '#191919',
+      activeBackgroundColor: '#555656',
+      inactiveBackgroundColor: '#555656'
     },
   }
   );

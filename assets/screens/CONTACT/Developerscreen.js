@@ -18,8 +18,8 @@ export default class Developer extends Component {
 
   render() {
     return (
-      <Container style={{ paddingTop: Constants.statusBarHeight, backgroundColor: '#D1DED7' }}>
-        <Header style={{ backgroundColor: 'white', elevation: 10 }}>
+      <Container style={{ paddingTop: Constants.statusBarHeight, backgroundColor: '#282828' }}>
+        <Header style={{ backgroundColor: '#555656', elevation: 10 }}>
           <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
             <StatusBar
               barStyle='light-content'
@@ -27,7 +27,7 @@ export default class Developer extends Component {
             />
             {
               this.state.fontLoaded ? (
-                <Text style={{ fontFamily: 'Batmanforever', fontSize: 25, color: 'black' }}>
+                <Text style={{ fontFamily: 'Batmanforever', fontSize: 25, color: 'white' }}>
                   VISHWAPRENEUR
                 </Text>
               ) : null
@@ -44,13 +44,13 @@ export default class Developer extends Component {
                   <Text style={styles.line}>EDC,VIIT</Text>
                   <View style={styles.social}>
                     <TouchableOpacity onPress={() => Linking.openURL("https://twitter.com/AvnishOswal")}>
-                      <Icon type="Entypo" name='twitter-with-circle' style={{ fontSize: 50, color: '#55acee', margin: 5 }} />
+                      <Icon type="FontAwesome" name='twitter' style={styles.twitter} />
                     </TouchableOpacity>
                     <TouchableOpacity onPress={() => Linking.openURL("https://www.facebook.com/avnish.oswal")}>
-                      <Icon type="Entypo" name='facebook-with-circle' style={{ fontSize: 50, color: '#3b5998', margin: 5 }} />
+                      <Icon type="FontAwesome" name='facebook' style={styles.facebook} />
                     </TouchableOpacity>
                     <TouchableOpacity onPress={() => Linking.openURL("https://www.linkedin.com/in/avnish-oswal-8a1b92151/")}>
-                      <Icon type="Entypo" name='linkedin-with-circle' style={{ fontSize: 50, color: '#0077b5', margin: 5 }} />
+                      <Icon type="FontAwesome" name='linkedin' style={styles.linkedin} />
                     </TouchableOpacity>
                   </View>
                 </View>
@@ -63,13 +63,13 @@ export default class Developer extends Component {
                   <Text style={styles.line}>EDC,VIIT</Text>
                   <View style={styles.social}>
                     <TouchableOpacity onPress={() => Linking.openURL("https://twitter.com/meghachandwani_")}>
-                      <Icon type="Entypo" name='twitter-with-circle' style={{ fontSize: 50, color: '#55acee', margin: 5 }} />
+                      <Icon type="FontAwesome" name='twitter' style={styles.twitter} />
                     </TouchableOpacity>
                     <TouchableOpacity onPress={() => Linking.openURL("https://www.facebook.com/mcdevildeva")}>
-                      <Icon type="Entypo" name='facebook-with-circle' style={{ fontSize: 50, color: '#3b5998', margin: 5 }} />
+                      <Icon type="FontAwesome" name='facebook' style={styles.facebook} />
                     </TouchableOpacity>
                     <TouchableOpacity onPress={() => Linking.openURL("https://www.linkedin.com/in/megha-chandwani-860bb815b/")}>
-                      <Icon type="Entypo" name='linkedin-with-circle' style={{ fontSize: 50, color: '#0077b5', margin: 5 }} />
+                      <Icon type="FontAwesome" name='linkedin' style={styles.linkedin} />
                     </TouchableOpacity>
                   </View>
                 </View>
@@ -85,13 +85,13 @@ export default class Developer extends Component {
                   <Text style={styles.line}>EDC,VIIT</Text>
                   <View style={styles.social}>
                     <TouchableOpacity onPress={() => Linking.openURL("https://twitter.com/RishikeshShede")}>
-                      <Icon type="Entypo" name='twitter-with-circle' style={{ fontSize: 50, color: '#55acee', margin: 5 }} />
+                      <Icon type="FontAwesome" name='twitter' style={styles.twitter} />
                     </TouchableOpacity>
                     <TouchableOpacity onPress={() => Linking.openURL("https://www.facebook.com/rishikesh.shede.403")}>
-                      <Icon type="Entypo" name='facebook-with-circle' style={{ fontSize: 50, color: '#3b5998', margin: 5 }} />
+                      <Icon type="FontAwesome" name='facebook' style={styles.facebook} />
                     </TouchableOpacity>
                     <TouchableOpacity onPress={() => Linking.openURL("https://www.linkedin.com/in/rishikesh-shede/")}>
-                      <Icon type="Entypo" name='linkedin-with-circle' style={{ fontSize: 50, color: '#0077b5', margin: 5 }} />
+                      <Icon type="FontAwesome" name='linkedin' style={styles.linkedin} />
                     </TouchableOpacity>
                   </View>
                 </View>
@@ -104,13 +104,13 @@ export default class Developer extends Component {
                   <Text style={styles.line}>EDC,VIIT</Text>
                   <View style={styles.social}>
                     <TouchableOpacity onPress={() => Linking.openURL("https://twitter.com/pp_17_")}>
-                      <Icon type="Entypo" name='twitter-with-circle' style={{ fontSize: 50, color: '#55acee', margin: 5 }} />
+                      <Icon type="FontAwesome" name='twitter' style={styles.twitter} />
                     </TouchableOpacity>
                     <TouchableOpacity onPress={() => Linking.openURL("https://www.facebook.com/profile.php?id=100007469433075")}>
-                      <Icon type="Entypo" name='facebook-with-circle' style={{ fontSize: 50, color: '#3b5998', margin: 5 }} />
+                      <Icon type="FontAwesome" name='facebook' style={styles.facebook} />
                     </TouchableOpacity>
                     <TouchableOpacity onPress={() => Linking.openURL("https://www.linkedin.com/in/prasad-patil-674765159/")}>
-                      <Icon type="Entypo" name='linkedin-with-circle' style={{ fontSize: 50, color: '#0077b5', margin: 5 }} />
+                      <Icon type="FontAwesome" name='linkedin' style={styles.linkedin} />
                     </TouchableOpacity>
                   </View>
                 </View>
@@ -140,7 +140,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     borderWidth: 0.5,
     borderColor: '#aaaaaa',
-    backgroundColor: '#D1DED7'
+    backgroundColor: '#282828'
   },
   imagestyle: {
     marginTop: 10,
@@ -152,14 +152,31 @@ const styles = StyleSheet.create({
     fontSize: 18,
     textAlign: 'center',
     fontWeight: 'bold',
+    color: 'white'
   },
   line: {
     fontSize: 15,
     textAlign: 'center',
+    color: 'white'
   },
   social: {
     flex: 1,
     flexDirection: 'row',
     marginLeft: 10, marginRight: 10,
+  },
+  twitter: {
+    fontSize: 25, 
+    margin: 10,
+    color: '#55acee'
+  },
+  facebook: {
+    fontSize: 25, 
+    margin: 10,
+    color: '#3b5999'
+  },
+  linkedin: {
+    fontSize: 25, 
+    margin: 10,
+    color: '#0077B5'
   }
 });

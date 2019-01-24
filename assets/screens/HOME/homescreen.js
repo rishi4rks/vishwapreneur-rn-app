@@ -18,7 +18,7 @@ import Vishwapreneur from './VishwapreneurScreen';
 import edcviit from './edcviitscreen';
 import smartsociothon from './smart-sociothon-screen';
 import register from './register';
-
+import openfloor from './openfloor';
 
 class Home extends Component {
 
@@ -43,14 +43,14 @@ class Home extends Component {
         this.state.fontLoaded ? (
         <Container
           style={{
-            backgroundColor: '#D1DED7',
+            backgroundColor: '#282828',
             flex: 1,
             FlexDirection: 'column',
             justifyContent: 'center',
             paddingTop: Constants.statusBarHeight,
           }}>
 
-          <Header style={{ backgroundColor: 'white', elevation: 10 }}>
+          <Header style={{ backgroundColor: '#555656', elevation: 10 }}>
             <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
               <StatusBar
                 barStyle='light-content'
@@ -58,7 +58,7 @@ class Home extends Component {
               />
               {
                 this.state.fontLoaded ? (
-                  <Text style={{ fontFamily: 'Batmanforever', fontSize: 25, color: 'black' }}>
+                  <Text style={{ fontFamily: 'Batmanforever', fontSize: 25, color: 'white' }}>
                     VISHWAPRENEUR
                 </Text>
                 ) : null
@@ -66,39 +66,12 @@ class Home extends Component {
             </View>
           </Header>
 
-          <ActionButton buttonColor="rgb(240,50,40)" style={styles.actionButtonStyle}
-            renderIcon={<Icon name='ticket' type='FontAwesome' style={{ fontSize: 22, color: 'white' }} />}
+          <ActionButton buttonColor="rgb(240,0,0)" style={styles.actionButtonStyle}
             renderIcon={active => active ? (<Icon name='ticket' type='FontAwesome' style={{ fontSize: 22, color: 'white' }} /> ) : (<Icon name='ticket' type='FontAwesome' style={{ fontSize: 22, color: 'white' }} />)}
             onPress={() => this.props.navigation.navigate('REGISTER')}
           />
 
           <Content padder>
-            <View style={{ alignItems: 'center', marginTop: 20 }}>
-              <Image
-                source={require('../../images/12345.png')}
-                style={{ height: 200, width: 200 }}
-              />
-            </View>
-
-            <Text>{'\n'}</Text>
-
-            <Button block onPress={() => this.props.navigation.navigate('REGISTER')}
-              style={{ backgroundColor: 'rgb(0,140,0)', borderRadius: 25, marginHorizontal: 80, marginBottom: 25, elevation: 3 }}>
-              <Text />
-              <Icon name="ticket" type='FontAwesome' style={{
-                fontSize: 22,
-                color: 'white',
-              }} />
-              <Text style={{
-                fontSize: 17,
-                color: 'white',
-              }}>
-                Register Now!
-                </Text>
-              <Text />
-            </Button>
-
-
             <Card style={{ marginBottom: 20, borderRadius: 15 }}>
               <Ripple rippleColor="rgb(60,60,60)" onPress={() => this.props.navigation.navigate('VishwapreneurScreen', {
                 itemId: 86,
@@ -106,7 +79,7 @@ class Home extends Component {
               })}>
 
                 <ImageBackground
-                  source={require('../../images/background_small.png')} borderRadius={15}
+                  source={require('../../images/vp1.jpg')} borderRadius={15}
                   style={{
                     height: 200,
                     width: null,
@@ -138,7 +111,7 @@ class Home extends Component {
             <Card style={{ marginBottom: 20, borderRadius: 15 }}>
               <Ripple rippleColor="rgb(200,200,200)" onPress={() => this.props.navigation.navigate('SMARTSOCIOTHON')}>
                 <ImageBackground
-                  source={require('../../images/smart-sociothon1.jpg')} borderRadius={15}
+                  source={require('../../images/ss2.jpg')} borderRadius={15}
                   style={{
                     height: 200,
                     width: null,
@@ -166,7 +139,7 @@ class Home extends Component {
             <Card style={{ marginBottom: 20, borderRadius: 15 }}>
               <Ripple rippleColor="rgb(200,200,200)" onPress={() => this.props.navigation.navigate('EDCVIIT')}>
                 <ImageBackground
-                  source={require('../../images/background-edc.jpg')} borderRadius={15}
+                  source={require('../../images/edc.png')} borderRadius={15}
                   style={{
                     height: 200,
                     width: null,
@@ -208,6 +181,7 @@ const AppStackNavigation = createStackNavigator({
   EDCVIIT: edcviit,
   SMARTSOCIOTHON: smartsociothon,
   REGISTER: register,
+  OPENFLOOR: openfloor,
 });
 
 export default createAppContainer(AppStackNavigation);

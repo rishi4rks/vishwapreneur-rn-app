@@ -16,11 +16,8 @@ import {
   Header,
   Icon
 } from 'native-base';
-import { createStackNavigator } from 'react-navigation';
 import { Constants, Font } from 'expo';
 
-import register from './register';
-import openfloor from './openfloor';
 
 export default class Vishwapreneur extends React.Component {
 
@@ -41,14 +38,14 @@ export default class Vishwapreneur extends React.Component {
     return (
       <Container
         style={{
-          backgroundColor: '#D1DED7',
+          backgroundColor: '#282828',
           flex: 1,
           FlexDirection: 'column',
           justifyContent: 'center',
           paddingTop: Constants.statusBarHeight,
         }}>
 
-        <Header style={{ backgroundColor: 'white', elevation: 10 }}>
+        <Header style={{ backgroundColor: '#555656', elevation: 10 }}>
           <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
             <StatusBar
               barStyle='light-content'
@@ -56,7 +53,7 @@ export default class Vishwapreneur extends React.Component {
             />
             {
               this.state.fontLoaded ? (
-                <Text style={{ fontFamily: 'Batmanforever', fontSize: 25, color: 'black' }}>
+                <Text style={{ fontFamily: 'Batmanforever', fontSize: 25, color: 'white' }}>
                   VISHWAPRENEUR
                 </Text>
               ) : null
@@ -64,15 +61,7 @@ export default class Vishwapreneur extends React.Component {
           </View>
         </Header>
 
-        <Content padder>
-          <View style={{ alignItems: 'center', marginTop: 20 }}>
-            <Image
-              source={require('../../images/12345.png')}
-              style={{ height: 200, width: 200 }}
-            />
-          </View>
-          <Text>{'\n'}</Text>
-
+        <Content padder style={{ paddingTop: 20 }}>
           <View
             style={{
               flex: 1,
@@ -81,7 +70,7 @@ export default class Vishwapreneur extends React.Component {
             <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
               {
                 this.state.fontLoaded ? (
-                  <Text style={{ fontFamily: 'Batmanforever', fontSize: 35, color: '#000', textAlign: 'center' }}>
+                  <Text style={{ fontFamily: 'Batmanforever', fontSize: 35, color: '#fff', textAlign: 'center' }}>
                     MANIFEST THE NEXT WITH VISHWAPRENEUR
                   </Text>
                 ) : null
@@ -96,10 +85,10 @@ export default class Vishwapreneur extends React.Component {
             }}>
             <Text />
             <Text style={styles.venueDetails}>
-              8TH AND 9TH FEBRUARY, 2019
+              8th AND 9th February, 2019
             </Text>
             <Text style={styles.venueDetails}>
-              MAHATMA PHULE SANSKRUTIK BHAVAN, WANOWRIE, PUNE
+              Mahatma Phule Sanskrutik Bhavan, Wanowrie, Pune
             </Text>
           </View>
           <Text>{'\n'}</Text>
@@ -122,8 +111,8 @@ export default class Vishwapreneur extends React.Component {
                 style={{
                   fontSize: 18,
                   color: 'white',
-                }}>{"\t"}
-                Book Now
+                }}>
+                Book Now!
               </Text>
             </Button>
             <Text />
@@ -139,17 +128,17 @@ export default class Vishwapreneur extends React.Component {
                 style={{
                   fontSize: 18,
                   color: 'white',
-                }}>{"\t"}
+                }}>
                 Openfloor
               </Text>
             </Button>
           </View>
 
           <View style={{ alignItems: 'center', paddingBottom: 15 }}>
-            <H1 style={{ fontWeight: 'bold' }}>About Us</H1>
+            <H1 style={{ fontWeight: 'bold', color: 'white' }}>About Us</H1>
           </View>
           <View style={{ paddingHorizontal: 15, borderBottomColor: '#aaaaaa', borderBottomWidth: 1, alignSelf: 'stretch' }}>
-            <Text style={{ fontSize: 18, textAlign: 'center', paddingBottom: 15 }}>
+            <Text style={{ fontSize: 18, textAlign: 'center', paddingBottom: 15, color: 'white' }}>
               Vishwapreneur is a National Level Entrepreneurship Convention — an
               event designed to inspire, invigorate and innovate ideas,
               businesses and dreams in all aspects of entrepreneurship. Call it
@@ -165,7 +154,7 @@ export default class Vishwapreneur extends React.Component {
           </View>
 
           <View style={{ alignItems: 'center', paddingVertical: 25 }}>
-            <H1 style={{ fontWeight: 'bold' }}>Sessions</H1>
+            <H1 style={{ fontWeight: 'bold', color: 'white' }}>Sessions</H1>
           </View>
 
           <Card style={{ marginBottom: 20, borderRadius: 8 }}>
@@ -265,16 +254,11 @@ export default class Vishwapreneur extends React.Component {
   }
 }
 
-const AppStackNavigation = createStackNavigator({
-  REGISTER: register,
-  OPENFLOOR: openfloor,
-});
-
 const styles = StyleSheet.create({
   venueDetails: {
-    fontWeight: 'bold',
     fontSize: 20,
-    textAlign: 'center'
+    textAlign: 'center',
+    color: 'white'
   },
   textWithShadow: {
     textShadowColor: 'rgba(60, 60, 60, .9)',
@@ -293,7 +277,9 @@ const styles = StyleSheet.create({
   },
   buttons: {
     backgroundColor: 'rgb(0,40,180)',
-    borderRadius: 25,
-    padding: 15,
+    borderRadius: 15,
+    padding: 7,
+    textAlign: 'center',
+    alignItems: 'center'
   }
 });
