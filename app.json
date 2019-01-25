@@ -8,7 +8,7 @@
       "ios",
       "android"
     ],
-    "version": "2.0.0",
+    "version": "1.5.9",
     "orientation": "portrait",
     "icon": "./assets/images/12345.png",
     "splash": {
@@ -17,7 +17,9 @@
       "backgroundColor": "#000000"
     },
     "android": {
-      "package": "com.vishwapreneur.www.vishwapreneuredc"
+      "permissions": [],
+      "package": "com.vishwapreneur.www.vishwapreneuredc",
+      "versionCode": 3
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -28,6 +30,6 @@
     "ios": {
       "supportsTablet": true
     },
-    "description": ""
+    "description": "The Official App for Vishwapreneur 2019"
   }
 }
