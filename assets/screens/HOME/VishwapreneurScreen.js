@@ -10,6 +10,7 @@ import {
 import {
   Content,
   Container,
+  H3,
   H1,
   Button,
   Card,
@@ -135,7 +136,7 @@ export default class Vishwapreneur extends React.Component {
           </View>
 
           <View style={{ alignItems: 'center', paddingBottom: 15 }}>
-            <H1 style={{ fontWeight: 'bold', color: 'white' }}>About Us</H1>
+            <H1 style={{ color: 'white' }}>About Us</H1>
           </View>
           <View style={{ paddingHorizontal: 15, borderBottomColor: '#aaaaaa', borderBottomWidth: 1, alignSelf: 'stretch' }}>
             <Text style={{ fontSize: 18, textAlign: 'center', paddingBottom: 15, color: 'white' }}>
@@ -154,7 +155,7 @@ export default class Vishwapreneur extends React.Component {
           </View>
 
           <View style={{ alignItems: 'center', paddingVertical: 25 }}>
-            <H1 style={{ fontWeight: 'bold', color: 'white' }}>Sessions</H1>
+            <H1 style={{ color: 'white' }}>Sessions</H1>
           </View>
 
           <Card style={{ marginBottom: 20, borderRadius: 8 }}>
@@ -263,9 +264,8 @@ const styles = StyleSheet.create({
   textWithShadow: {
     textShadowColor: 'rgba(60, 60, 60, .9)',
     textShadowOffset: { width: 2, height: 2 },
-    fontSize: 40,
+    fontSize: 30,
     color: 'white',
-    fontWeight: 'bold'
   },
   contentFont: {
     textShadowColor: 'rgba(60, 60, 60, 1)',

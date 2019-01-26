@@ -91,7 +91,6 @@ const styles = StyleSheet.create({
   },
   inststyle: {
     fontSize: 26,
-    fontWeight: 'bold',
     borderLeftColor: '#151716',
     borderLeftWidth: 1,
     borderRightColor: '#151716',
