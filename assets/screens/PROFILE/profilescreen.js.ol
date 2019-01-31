@@ -13,7 +13,7 @@ import {
 import { createStackNavigator, createAppContainer } from 'react-navigation';
 import { Header, Container, Content, Icon, Button } from 'native-base';
 import { Constants, Font } from 'expo';
-import register from '../HOME/register';
+import register from './register';
 import afterlogin from './afterlogin';
 
 class login extends React.Component {
@@ -31,75 +31,63 @@ class login extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      username: '',
-      password: '',
-
+      userEmail: '',
+      userPassword: ''
     }
   }
 
-  loginp = () =>{
-		const {username, password, rcpt_no} = this.state;
-    // let reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/ ;
-    let reg = /^[a-zA-Z0-9_@.]*$/;
-		if(username==""){
-			alert("Please enter Email address");
-      //this.setState({email:'Please enter Email address'})
+  login = () => {
+    const { userEmail, userPassword } = this.state;
+    let reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    if (userEmail == "") {
+      //alert("Please enter Email address");
+      this.setState({ email: 'Please enter Email address' })
+
+    }
+
+    else if (reg.test(userEmail) === false) {
+      //alert("Email is Not Correct");
+      this.setState({ email: 'Email is Not Correct' })
       return false;
-			}
-		else if(reg.test(username) === false)
-		{
-		alert("Incorrect Email");
-		//this.setState({email:'Email is Not Correct'})
-		return false;
-		  }
-    else if(password==""){
-      alert("Please Enter Password");
-    //this.setState({email:'Please enter password'})
-    return false;
     }
-    else if(reg.test(password) === false){
-      alert("Incorrect Password");
-    //this.setState({email:'Please enter password'})
-    return false;
+
+    else if (userPassword == "") {
+      this.setState({ email: 'Please enter password' })
     }
-    else if((reg.test(username) === true) && (reg.test(password) === true))
-    {
-      // alert("Successfully Logged in");
-      //this.setState({email:'Please enter password'})
-      fetch('https://www.edcviit.com/vishwapreneur/phps/loginapp.php',{
-			method:'post',
-			header:{
-				'Accept': 'application/json',
-				'Content-type': 'application/json'
-			},
-			body:JSON.stringify({
-				// we will pass our input data to server
-				username: username,
-        password: password,
-			})
-			
-    })
-		.then((response) => response.json())
-		 .then((responseJson)=>{  
-       console.log(responseJson);
-			 if(responseJson["success"] == true){
-				 // redirect to profile page
-				 //alert("Successfully Login");
-         this.props.navigation.navigate("PROFILE", {ScreenName: responseJson["name"], Receiptno: responseJson["rcpt_no"], Phoneno: responseJson["phone"], Category: responseJson["category"], Email: responseJson["email"], Amtrem: responseJson["balance"],});
-       }
-       else{
-				 alert("Wrong Login Details");
-			 }
-		 })
-		 .catch((error)=>{
-		 console.error(error);
-		 });
-		}
-		Keyboard.dismiss();
+    else {
+
+      fetch('https://hardeepwork.000webhostapp.com/react/login.php', {
+        method: 'post',
+        header: {
+          'Accept': 'application/json',
+          'Content-type': 'application/json'
+        },
+        body: JSON.stringify({
+          // we will pass our input data to server
+          email: userEmail,
+          password: userPassword
+        })
+
+      })
+        .then((response) => response.json())
+        .then((responseJson) => {
+          if (responseJson == "ok") {
+            // redirect to profile page
+            alert("Successfully Login");
+            this.props.navigation.navigate("PROFILE");
+          } else {
+            alert("Wrong Login Details");
+          }
+        })
+        .catch((error) => {
+          console.error(error);
+        });
     }
-	// else{
-		  
-	// }
+
+
+    Keyboard.dismiss();
+  }
+
   render() {
     return (
       <Container
@@ -130,16 +118,30 @@ class login extends React.Component {
 
                 <Text style={styles.title}>Login</Text>
                 <TextInput
-                  placeholder="Enter Email"
+                  placeholder="Username"
+                  autoCapitalize="none"
+                  autoCorrect={false}
+                  returnKeyType="next"
+                  onSubmitEditing={() => this.passwordInput.focus()}
                   style={styles.input}
-                  onChangeText={username => this.setState({username})}
+                  onChangeText={userEmail => this.setState({ userEmail })}
                 />
                 <TextInput
+                  placeholder="Password"
+                  autoCapitalize="none"
+                  autoCorrect={false}
+                  returnKeyType="done"
+                  secureTextEntry
                   style={styles.input}
-                  placeholder="Enter Password"
-	                onChangeText={password => this.setState({password})}
+                  ref={input => (this.passwordInput = input)}
+                  onChangeText={userPassword => this.setState({ userPassword })}
                 />
-                <Button onPress={this.loginp} block style={styles.loginButton} >
+                <Button
+                  block
+                  style={styles.loginButton}
+                  onPress={this.login}
+                  // onPress={() => this.props.navigation.navigate('PROFILE', {})}
+                >
                   <Text
                     style={{
                       fontSize: 18,

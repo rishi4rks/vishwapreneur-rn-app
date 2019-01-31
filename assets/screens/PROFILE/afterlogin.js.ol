@@ -15,19 +15,6 @@ export default class afterlogin extends React.Component {
 
     this.setState({ fontLoaded: true });
   }
-
-  constructor(props) {
-    super(props)
-    this.state={
-      ScreenName: this.props.navigation.state.params.ScreenName,
-      Receiptno: this.props.navigation.state.params.Receiptno,
-      Phoneno: this.props.navigation.state.params.Phoneno,
-      Category: this.props.navigation.state.params.Category,
-      Email: this.props.navigation.state.params.Email,
-      Amtrem: this.props.navigation.state.params.Amtrem,
-    }
-  }
-
   render() {
     return (
       <Container
@@ -57,15 +44,15 @@ export default class afterlogin extends React.Component {
         <Content style={{ padding: 25 }}>
         
           <View style={{ alignItems: 'center' }}>
-            <Text style={styles.textWithShadow}>Hi {this.state.ScreenName}</Text>
+            <Text style={styles.textWithShadow}>Hi Rishikesh</Text>
           </View>
 
           <View style={{ paddingBottom: 15, paddingLeft: 15, marginVertical: 25 }}>
-            <Text style={styles.content}>Receipt no. : {this.state.Receiptno}</Text>
-            <Text style={styles.content}>Phone : {this.state.Phoneno}</Text>
-            <Text style={styles.content}>Category : {this.state.Category}</Text>
-            <Text style={styles.content}>Email : {this.state.Email}</Text>
-            <Text style={styles.content}>Amount remaining : {this.state.Amtrem}</Text>
+            <Text style={styles.content}>Receipt no. : </Text>
+            <Text style={styles.content}>Phone : </Text>
+            <Text style={styles.content}>Category : </Text>
+            <Text style={styles.content}>Email : </Text>
+            <Text style={styles.content}>Amount remaining : </Text>
           </View>
 
           <View style={{ paddingHorizontal: 25, borderBottomColor: '#aaaaaa', borderBottomWidth: 1.5 }} />
