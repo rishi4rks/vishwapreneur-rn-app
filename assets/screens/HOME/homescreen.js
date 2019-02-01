@@ -71,15 +71,15 @@ class Home extends Component {
             onPress={() => this.props.navigation.navigate('REGISTER')}
           />
 
-          <Content padder>
-            <Card style={{ marginBottom: 20, borderRadius: 15 }}>
+          <Content>
+            <Card style={{ marginBottom: 20, borderRadius: 0 }}>
               <Ripple rippleColor="rgb(60,60,60)" onPress={() => this.props.navigation.navigate('VishwapreneurScreen', {
                 itemId: 86,
                 otherParam: 'Vishwapreneur',
               })}>
 
                 <ImageBackground
-                  source={require('../../images/vp1.jpg')} borderRadius={15}
+                  source={require('../../images/bg3.jpg')} borderRadius={0}
                   style={{
                     height: 200,
                     width: null,
@@ -108,10 +108,10 @@ class Home extends Component {
             </Card>
 
 
-            <Card style={{ marginBottom: 20, borderRadius: 15 }}>
+            <Card style={{ marginBottom: 20, borderRadius: 0 }}>
               <Ripple rippleColor="rgb(200,200,200)" onPress={() => this.props.navigation.navigate('SMARTSOCIOTHON')}>
                 <ImageBackground
-                  source={require('../../images/ss2.jpg')} borderRadius={15}
+                  source={require('../../images/bg2.jpg')} borderRadius={0}
                   style={{
                     height: 200,
                     width: null,
@@ -136,10 +136,10 @@ class Home extends Component {
               </Ripple>
             </Card>
 
-            <Card style={{ marginBottom: 20, borderRadius: 15 }}>
+            <Card style={{ marginBottom: 20, borderRadius: 0 }}>
               <Ripple rippleColor="rgb(200,200,200)" onPress={() => this.props.navigation.navigate('EDCVIIT')}>
                 <ImageBackground
-                  source={require('../../images/edc.png')} borderRadius={15}
+                  source={require('../../images/bg4.png')} borderRadius={0}
                   style={{
                     height: 200,
                     width: null,

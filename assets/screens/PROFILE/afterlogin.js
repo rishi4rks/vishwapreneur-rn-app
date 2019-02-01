@@ -57,15 +57,15 @@ export default class afterlogin extends React.Component {
         <Content style={{ padding: 25 }}>
         
           <View style={{ alignItems: 'center' }}>
-            <Text style={styles.textWithShadow}>Hi {this.state.ScreenName}</Text>
+            <Text style={styles.textWithShadow}>Hi, {this.state.ScreenName}</Text>
           </View>
 
           <View style={{ paddingBottom: 15, paddingLeft: 15, marginVertical: 25 }}>
-            <Text style={styles.content}>Receipt no. : {this.state.Receiptno}</Text>
-            <Text style={styles.content}>Phone : {this.state.Phoneno}</Text>
-            <Text style={styles.content}>Category : {this.state.Category}</Text>
-            <Text style={styles.content}>Email : {this.state.Email}</Text>
-            <Text style={styles.content}>Amount remaining : {this.state.Amtrem}</Text>
+            <Text style={styles.content}>Receipt no. :  {this.state.Receiptno}</Text>
+            <Text style={styles.content}>Phone :  {this.state.Phoneno}</Text>
+            <Text style={styles.content}>Category :  {this.state.Category}</Text>
+            <Text style={styles.content}>Email :  {this.state.Email}</Text>
+            <Text style={styles.content}>Amount remaining :  {this.state.Amtrem}</Text>
           </View>
 
           <View style={{ paddingHorizontal: 25, borderBottomColor: '#aaaaaa', borderBottomWidth: 1.5 }} />

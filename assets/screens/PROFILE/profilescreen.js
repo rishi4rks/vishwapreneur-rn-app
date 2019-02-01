@@ -40,7 +40,7 @@ class login extends React.Component {
   loginp = () =>{
 		const {username, password, rcpt_no} = this.state;
     // let reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/ ;
-    let reg = /^[a-zA-Z0-9_@.]*$/;
+    let reg = /^[a-z0-9_@.]*$/;
 		if(username==""){
 			alert("Please enter Email address");
       //this.setState({email:'Please enter Email address'})
@@ -48,7 +48,7 @@ class login extends React.Component {
 			}
 		else if(reg.test(username) === false)
 		{
-		alert("Incorrect Email");
+		alert("Incorrect Username");
 		//this.setState({email:'Email is Not Correct'})
 		return false;
 		  }
@@ -137,6 +137,7 @@ class login extends React.Component {
                 <TextInput
                   style={styles.input}
                   placeholder="Enter Password"
+                  secureTextEntry
 	                onChangeText={password => this.setState({password})}
                 />
                 <Button onPress={this.loginp} block style={styles.loginButton} >
