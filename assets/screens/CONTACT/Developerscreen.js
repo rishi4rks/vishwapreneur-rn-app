@@ -39,7 +39,46 @@ export default class Developer extends Component {
             <View style={styles.container}>
               <View style={styles.incontainer}>
                 <View style={{ alignItems: 'center', justifyContent: 'center' }}>
-                  <Image style={styles.imagestyle} source={require('../../images/avi.jpeg')} />
+                  <Image style={styles.imagestyle} source={require('../../images/adi1.jpg')} />
+                  <Text style={styles.title}>Aditya Jangid</Text>
+                  <Text style={styles.line}>EDC,VIIT</Text>
+                  <View style={styles.social}>
+                    <TouchableOpacity onPress={() => Linking.openURL("https://twitter.com/ossm_aj?s=08")}>
+                      <Icon type="FontAwesome" name='twitter' style={styles.twitter} />
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress={() => Linking.openURL("https://www.facebook.com/aditya.jangid.torqk")}>
+                      <Icon type="FontAwesome" name='facebook' style={styles.facebook} />
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress={() => Linking.openURL("https://www.linkedin.com/in/aditya-jangid-287a06133/")}>
+                      <Icon type="FontAwesome" name='linkedin' style={styles.linkedin} />
+                    </TouchableOpacity>
+                  </View>
+                </View>
+              </View>
+              <View style={styles.incontainer}>
+                <View style={{ alignItems: 'center', justifyContent: 'center' }}>
+                  <Image style={styles.imagestyle} source={require('../../images/guru1.jpg')} />
+                  <Text style={styles.title}>Gurudas Padhar</Text>
+                  <Text style={styles.line}>EDC,VIIT</Text>
+                  <View style={styles.social}>
+                    <TouchableOpacity onPress={() => Linking.openURL("https://twitter.com/GurudasPadhar?s=08")}>
+                      <Icon type="FontAwesome" name='twitter' style={styles.twitter} />
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress={() => Linking.openURL("https://www.facebook.com/profile.php?id=100005761236244")}>
+                      <Icon type="FontAwesome" name='facebook' style={styles.facebook} />
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress={() => Linking.openURL("https://www.linkedin.com/in/gurudas-padhar-2a8624138/")}>
+                      <Icon type="FontAwesome" name='linkedin' style={styles.linkedin} />
+                    </TouchableOpacity>
+                  </View>
+                </View>
+              </View>
+            </View>
+
+            <View style={styles.container}>
+              <View style={styles.incontainer}>
+                <View style={{ alignItems: 'center', justifyContent: 'center' }}>
+                  <Image style={styles.imagestyle} source={require('../../images/avi1.jpeg')} />
                   <Text style={styles.title}>Avnish Oswal</Text>
                   <Text style={styles.line}>EDC,VIIT</Text>
                   <View style={styles.social}>
@@ -55,10 +94,9 @@ export default class Developer extends Component {
                   </View>
                 </View>
               </View>
-
               <View style={styles.incontainer}>
                 <View style={{ alignItems: 'center', justifyContent: 'center' }}>
-                  <Image style={styles.imagestyle} source={require('../../images/megh.jpeg')} />
+                  <Image style={styles.imagestyle} source={require('../../images/megh1.jpeg')} />
                   <Text style={styles.title}>Megha Chandwani</Text>
                   <Text style={styles.line}>EDC,VIIT</Text>
                   <View style={styles.social}>
@@ -74,13 +112,12 @@ export default class Developer extends Component {
                   </View>
                 </View>
               </View>
-
             </View>
-            <View style={styles.container}>
 
+            <View style={styles.container}>
               <View style={styles.incontainer}>
                 <View style={{ alignItems: 'center', justifyContent: 'center' }}>
-                  <Image style={styles.imagestyle} source={require('../../images/rishi.jpeg')} />
+                  <Image style={styles.imagestyle} source={require('../../images/rishi1.jpeg')} />
                   <Text style={styles.title}>Rishikesh Shede</Text>
                   <Text style={styles.line}>EDC,VIIT</Text>
                   <View style={styles.social}>
@@ -96,10 +133,9 @@ export default class Developer extends Component {
                   </View>
                 </View>
               </View>
-
               <View style={styles.incontainer}>
                 <View style={{ alignItems: 'center', justifyContent: 'center' }}>
-                  <Image style={styles.imagestyle} source={require('../../images/pp.jpg')} />
+                  <Image style={styles.imagestyle} source={require('../../images/pp1.jpg')} />
                   <Text style={styles.title}>Prasad Patil</Text>
                   <Text style={styles.line}>EDC,VIIT</Text>
                   <View style={styles.social}>
@@ -110,6 +146,45 @@ export default class Developer extends Component {
                       <Icon type="FontAwesome" name='facebook' style={styles.facebook} />
                     </TouchableOpacity>
                     <TouchableOpacity onPress={() => Linking.openURL("https://www.linkedin.com/in/prasad-patil-674765159/")}>
+                      <Icon type="FontAwesome" name='linkedin' style={styles.linkedin} />
+                    </TouchableOpacity>
+                  </View>
+                </View>
+              </View>
+            </View>
+
+            <View style={styles.container}>
+              <View style={styles.incontainer}>
+                <View style={{ alignItems: 'center', justifyContent: 'center' }}>
+                  <Image style={styles.imagestyle} source={require('../../images/ayush1.jpeg')} />
+                  <Text style={styles.title}>Ayush Shah</Text>
+                  <Text style={styles.line}>EDC,VIIT</Text>
+                  <View style={styles.social}>
+                    <TouchableOpacity onPress={() => Linking.openURL("https://twitter.com/AyushSh66402152?s=08")}>
+                      <Icon type="FontAwesome" name='twitter' style={styles.twitter} />
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress={() => Linking.openURL("https://www.facebook.com/ayush.shah.5492")}>
+                      <Icon type="FontAwesome" name='facebook' style={styles.facebook} />
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress={() => Linking.openURL("https://www.linkedin.com/in/ayush-shah-28b771159")}>
+                      <Icon type="FontAwesome" name='linkedin' style={styles.linkedin} />
+                    </TouchableOpacity>
+                  </View>
+                </View>
+              </View>
+              <View style={styles.incontainer}>
+                <View style={{ alignItems: 'center', justifyContent: 'center' }}>
+                  <Image style={styles.imagestyle} source={require('../../images/saket1.jpeg')} />
+                  <Text style={styles.title}>Saket Pawar</Text>
+                  <Text style={styles.line}>EDC,VIIT</Text>
+                  <View style={styles.social}>
+                    <TouchableOpacity onPress={() => Linking.openURL("https://twitter.com/saketpawar1999?s=08")}>
+                      <Icon type="FontAwesome" name='twitter' style={styles.twitter} />
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress={() => Linking.openURL("https://www.facebook.com/pawar.pawarsaket")}>
+                      <Icon type="FontAwesome" name='facebook' style={styles.facebook} />
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress={() => Linking.openURL("https://www.linkedin.com/in/saket-pawar-276b7415a")}>
                       <Icon type="FontAwesome" name='linkedin' style={styles.linkedin} />
                     </TouchableOpacity>
                   </View>
@@ -164,17 +239,17 @@ const styles = StyleSheet.create({
     marginLeft: 10, marginRight: 10,
   },
   twitter: {
-    fontSize: 25, 
+    fontSize: 25,
     margin: 10,
     color: '#55acee'
   },
   facebook: {
-    fontSize: 25, 
+    fontSize: 25,
     margin: 10,
     color: '#3b5999'
   },
   linkedin: {
-    fontSize: 25, 
+    fontSize: 25,
     margin: 10,
     color: '#0077B5'
   }

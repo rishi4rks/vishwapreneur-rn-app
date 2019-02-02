@@ -95,7 +95,7 @@ class ContactusScreen extends React.Component {
                 fontSize: 20,
                 color: 'white',
               }}>
-              Developers
+              Developer Team
               </Text>
             <Icon name="code" type='Entypo' style={{
               fontSize: 22,
