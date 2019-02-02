@@ -5,19 +5,22 @@ import {
   StyleSheet,
   Image,
   ImageBackground,
-  StatusBar
+  StatusBar,
+  ScrollView
 } from 'react-native';
 import {
   Content,
   Container,
-  H3,
   H1,
+  H2,
+  H3,
   Button,
   Card,
   Header,
   Icon
 } from 'native-base';
 import { Constants, Font } from 'expo';
+import Sponsors from './sponsors'
 
 
 export default class Vishwapreneur extends React.Component {
@@ -248,7 +251,39 @@ export default class Vishwapreneur extends React.Component {
               </View>
             </ImageBackground>
           </Card>
-
+          <View style={styles.horiscroll}>
+            <View style={{ alignItems: 'center', paddingBottom: 10 }}>
+              <H1 style={{ color: 'white' }}>Our Sponsors</H1>
+            </View>
+            <ScrollView horizontal={true}>
+              <Sponsors imageUri={require('../../images/sponsors/ims.jpg')} />
+              <Sponsors imageUri={require('../../images/sponsors/swiggy.png')} />
+              <Sponsors imageUri={require('../../images/sponsors/protons.jpg')} />
+              <Sponsors imageUri={require('../../images/sponsors/infinitygate.png')} />
+              <Sponsors imageUri={require('../../images/sponsors/budhani.png')} />
+              <Sponsors imageUri={require('../../images/sponsors/ktm.png')} />
+              <Sponsors imageUri={require('../../images/sponsors/educad.png')} />
+              <Sponsors imageUri={require('../../images/sponsors/box8.jpg')} />
+              <Sponsors imageUri={require('../../images/sponsors/Gateway.png')} />
+              <Sponsors imageUri={require('../../images/sponsors/aarnell.jpg')} />
+              <Sponsors imageUri={require('../../images/sponsors/chaitanya.png')} />
+            </ScrollView>
+          </View>
+          <View style={{ alignItems: 'center', paddingBottom: 3 }}>
+            <H1 style={{ color: 'white' }}>Our Partners</H1>
+          </View>
+          <View style={styles.horiscroll}>
+            <ScrollView horizontal={true}>
+              <Sponsors imageUri={require('../../images/sponsors/multi-fit-black.png')} name="Fitness Partner" />
+              <Sponsors imageUri={require('../../images/sponsors/the-souled-store.jpg')} name="Gifting Partner" />
+              <Sponsors imageUri={require('../../images/sponsors/pune-open-coffee-club.png')} name="Ecosystem Partner" />
+              <Sponsors imageUri={require('../../images/sponsors/campus-times1.png')} name="Youth Partner"/>
+              <Sponsors imageUri={require('../../images/sponsors/elecer.jpg')} name="Startup Partner"/>
+              <Sponsors imageUri={require('../../images/sponsors/grihneelogo.png')} name="Startup Partner"/>
+              <Sponsors imageUri={require('../../images/sponsors/avanjas.jpg')} name="Startup Partner"/>
+              <Sponsors imageUri={require('../../images/sponsors/daftar.jpg')} name="Co-working space Partner"/>
+            </ScrollView>
+          </View>
         </Content>
       </Container>
     );
@@ -281,5 +316,21 @@ const styles = StyleSheet.create({
     padding: 7,
     textAlign: 'center',
     alignItems: 'center'
+  },
+  horiscroll: {
+    marginTop: 20,
+    height: 220
+  },
+  childscroll: {
+    width: 220,
+    height: 130,
+    borderWidth: 1,
+    borderColor: '#dddddd'
+  },
+  sponsor: {
+    flex: 1,
+    width: null,
+    height: null,
+    resizeMode: 'cover'
   }
 });

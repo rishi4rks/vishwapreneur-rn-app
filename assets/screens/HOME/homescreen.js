@@ -3,14 +3,13 @@ import {
   Container,
   Header,
   Content,
-  Button,
   Text,
   Card,
   Icon
 } from 'native-base';
 import Ripple from 'react-native-material-ripple';
 import { createStackNavigator, createAppContainer } from 'react-navigation';
-import { Image, View, ImageBackground, StyleSheet, StatusBar, SafeAreaView } from 'react-native';
+import {  View, ImageBackground, StyleSheet, StatusBar, SafeAreaView } from 'react-native';
 import { Constants, Font } from 'expo';
 import ActionButton from 'react-native-action-button';
 
@@ -72,14 +71,14 @@ class Home extends Component {
           />
 
           <Content>
-            <Card style={{ marginBottom: 20, borderRadius: 0 }}>
+            <Card style={{ marginBottom: 15, borderRadius: 10, marginTop: 15 }}>
               <Ripple rippleColor="rgb(60,60,60)" onPress={() => this.props.navigation.navigate('VishwapreneurScreen', {
                 itemId: 86,
                 otherParam: 'Vishwapreneur',
               })}>
 
                 <ImageBackground
-                  source={require('../../images/bg3.jpg')} borderRadius={0}
+                  source={require('../../images/bg3.jpg')} borderRadius={10}
                   style={{
                     height: 200,
                     width: null,
@@ -108,10 +107,10 @@ class Home extends Component {
             </Card>
 
 
-            <Card style={{ marginBottom: 20, borderRadius: 0 }}>
+            <Card style={{ marginBottom: 20, borderRadius: 10 }}>
               <Ripple rippleColor="rgb(200,200,200)" onPress={() => this.props.navigation.navigate('SMARTSOCIOTHON')}>
                 <ImageBackground
-                  source={require('../../images/bg2.jpg')} borderRadius={0}
+                  source={require('../../images/bg2.jpg')} borderRadius={10}
                   style={{
                     height: 200,
                     width: null,
@@ -136,10 +135,10 @@ class Home extends Component {
               </Ripple>
             </Card>
 
-            <Card style={{ marginBottom: 20, borderRadius: 0 }}>
+            <Card style={{ marginBottom: 20, borderRadius: 10 }}>
               <Ripple rippleColor="rgb(200,200,200)" onPress={() => this.props.navigation.navigate('EDCVIIT')}>
                 <ImageBackground
-                  source={require('../../images/bg4.png')} borderRadius={0}
+                  source={require('../../images/bg4.png')} borderRadius={10}
                   style={{
                     height: 200,
                     width: null,

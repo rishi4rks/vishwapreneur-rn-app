@@ -39,7 +39,7 @@ export default class Developer extends Component {
             <View style={styles.container}>
               <View style={styles.incontainer}>
                 <View style={{ alignItems: 'center', justifyContent: 'center' }}>
-                  <Image style={styles.imagestyle} source={require('../../images/adi1.jpg')} />
+                  <Image style={styles.imagestyle} source={require('../../images/adi.jpg')} />
                   <Text style={styles.title}>Aditya Jangid</Text>
                   <Text style={styles.line}>EDC,VIIT</Text>
                   <View style={styles.social}>
@@ -57,7 +57,7 @@ export default class Developer extends Component {
               </View>
               <View style={styles.incontainer}>
                 <View style={{ alignItems: 'center', justifyContent: 'center' }}>
-                  <Image style={styles.imagestyle} source={require('../../images/guru1.jpg')} />
+                  <Image style={styles.imagestyle} source={require('../../images/guru.jpg')} />
                   <Text style={styles.title}>Gurudas Padhar</Text>
                   <Text style={styles.line}>EDC,VIIT</Text>
                   <View style={styles.social}>
@@ -78,7 +78,7 @@ export default class Developer extends Component {
             <View style={styles.container}>
               <View style={styles.incontainer}>
                 <View style={{ alignItems: 'center', justifyContent: 'center' }}>
-                  <Image style={styles.imagestyle} source={require('../../images/avi1.jpeg')} />
+                  <Image style={styles.imagestyle} source={require('../../images/avi.jpeg')} />
                   <Text style={styles.title}>Avnish Oswal</Text>
                   <Text style={styles.line}>EDC,VIIT</Text>
                   <View style={styles.social}>
@@ -96,7 +96,7 @@ export default class Developer extends Component {
               </View>
               <View style={styles.incontainer}>
                 <View style={{ alignItems: 'center', justifyContent: 'center' }}>
-                  <Image style={styles.imagestyle} source={require('../../images/megh1.jpeg')} />
+                  <Image style={styles.imagestyle} source={require('../../images/megha.jpeg')} />
                   <Text style={styles.title}>Megha Chandwani</Text>
                   <Text style={styles.line}>EDC,VIIT</Text>
                   <View style={styles.social}>
@@ -117,7 +117,7 @@ export default class Developer extends Component {
             <View style={styles.container}>
               <View style={styles.incontainer}>
                 <View style={{ alignItems: 'center', justifyContent: 'center' }}>
-                  <Image style={styles.imagestyle} source={require('../../images/rishi1.jpeg')} />
+                  <Image style={styles.imagestyle} source={require('../../images/rishi.jpeg')} />
                   <Text style={styles.title}>Rishikesh Shede</Text>
                   <Text style={styles.line}>EDC,VIIT</Text>
                   <View style={styles.social}>
@@ -135,7 +135,7 @@ export default class Developer extends Component {
               </View>
               <View style={styles.incontainer}>
                 <View style={{ alignItems: 'center', justifyContent: 'center' }}>
-                  <Image style={styles.imagestyle} source={require('../../images/pp1.jpg')} />
+                  <Image style={styles.imagestyle} source={require('../../images/prasad.jpeg')} />
                   <Text style={styles.title}>Prasad Patil</Text>
                   <Text style={styles.line}>EDC,VIIT</Text>
                   <View style={styles.social}>
@@ -156,7 +156,7 @@ export default class Developer extends Component {
             <View style={styles.container}>
               <View style={styles.incontainer}>
                 <View style={{ alignItems: 'center', justifyContent: 'center' }}>
-                  <Image style={styles.imagestyle} source={require('../../images/ayush1.jpeg')} />
+                  <Image style={styles.imagestyle} source={require('../../images/ayush.jpeg')} />
                   <Text style={styles.title}>Ayush Shah</Text>
                   <Text style={styles.line}>EDC,VIIT</Text>
                   <View style={styles.social}>
@@ -174,7 +174,7 @@ export default class Developer extends Component {
               </View>
               <View style={styles.incontainer}>
                 <View style={{ alignItems: 'center', justifyContent: 'center' }}>
-                  <Image style={styles.imagestyle} source={require('../../images/saket1.jpeg')} />
+                  <Image style={styles.imagestyle} source={require('../../images/saket.jpeg')} />
                   <Text style={styles.title}>Saket Pawar</Text>
                   <Text style={styles.line}>EDC,VIIT</Text>
                   <View style={styles.social}>
