@@ -14,8 +14,8 @@ import { Constants, Font } from 'expo';
 import ActionButton from 'react-native-action-button';
 
 import Vishwapreneur from './VishwapreneurScreen';
-import edcviit from './edcviitscreen';
-import smartsociothon from './smart-sociothon-screen';
+import edc from './edc';
+import SmartSociothon from './smart-sociothon-screen';
 import register from './register';
 import openfloor from './openfloor';
 
@@ -177,8 +177,8 @@ class Home extends Component {
 const AppStackNavigation = createStackNavigator({
   HomeScreen: { screen: Home },
   VishwapreneurScreen: { screen: Vishwapreneur },
-  EDCVIIT: edcviit,
-  SMARTSOCIOTHON: smartsociothon,
+  EDCVIIT: edc,
+  SMARTSOCIOTHON: SmartSociothon,
   REGISTER: register,
   OPENFLOOR: openfloor,
 });

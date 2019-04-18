@@ -10,10 +10,10 @@ import ContactusScreen from './assets/screens/CONTACT/contactscreen';
 
 const TabNavigator = createBottomTabNavigator(
   {
-    HOME: { screen: HomeScreen },
+    HOME: { screen: HomeScreen},
     PASS: { screen: ProfileScreen },
     INSTRUCTIONS: { screen: InstructionsScreen },
-    CONTACTUS: { screen: ContactusScreen },
+    CONTACT: { screen: ContactusScreen },
   },
   {
     defaultNavigationOptions: ({ navigation }) => ({
@@ -21,13 +21,13 @@ const TabNavigator = createBottomTabNavigator(
         const { routeName } = navigation.state;
         let iconName;
         if (routeName === 'HOME') {
-          iconName = `ios-home`;
+          iconName = 'ios-home';
         } else if (routeName === 'PASS') {
-          iconName = `ios-key`;
+          iconName = 'ios-key';
         } else if (routeName === 'INSTRUCTIONS') {
-          iconName = `ios-information-circle`;
-        } else if (routeName === 'CONTACTUS') {
-          iconName = `ios-call`;
+          iconName = 'ios-information-circle';
+        } else if (routeName === 'CONTACT') {
+          iconName = 'ios-call';
         }
 
         // You can return any component that you like here! We usually use an

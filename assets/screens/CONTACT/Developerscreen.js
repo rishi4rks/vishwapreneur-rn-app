@@ -139,7 +139,7 @@ export default class Developer extends Component {
                   <Text style={styles.title}>Prasad Patil</Text>
                   <Text style={styles.line}>EDC,VIIT</Text>
                   <View style={styles.social}>
-                    <TouchableOpacity onPress={() => Linking.openURL("https://twitter.com/pp_17_")}>
+                    <TouchableOpacity onPress={() => Linking.openURL("https://twitter.com/PatilPrasad_?s=08")}>
                       <Icon type="FontAwesome" name='twitter' style={styles.twitter} />
                     </TouchableOpacity>
                     <TouchableOpacity onPress={() => Linking.openURL("https://www.facebook.com/profile.php?id=100007469433075")}>

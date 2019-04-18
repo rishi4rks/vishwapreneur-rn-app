@@ -3,7 +3,6 @@ import {
   Container,
   Header,
   Content,
-  H1,
   Text,
   ListItem,
   List,
@@ -20,10 +19,11 @@ export default class InstructionsScreen extends Component {
   async componentDidMount() {
     await Font.loadAsync({
       'Batmanforever': require('../../fonts/batmfa.ttf'),
+      'Raleway': require('../../fonts/Raleway-ExtraBold.ttf'),
     });
+
     this.setState({ fontLoaded: true });
   }
-
   render() {
     return (
       <Container style={{
@@ -49,33 +49,52 @@ export default class InstructionsScreen extends Component {
           </View>
         </Header>
         <Content>
-          <View
-            style={{
-              flex: 1,
-              alignItems: 'center',
-              paddingVertical: 25,
-            }}>
-
-            <H1 style={styles.inststyle}>INSTRUCTIONS</H1>
+          <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', paddingTop: 15 }}>
+            {
+              this.state.fontLoaded ? (
+                <Text style={styles.inststyle}>
+                  Instructions
+                </Text>
+              ) : null
+            }
           </View>
           <List>
+
             <ListItem style={styles.hrbreak}>
-              <Text style={styles.details} fontWeight="bold">» Steps to be followed by participants for logging in:</Text>
+              {
+                this.state.fontLoaded ? (
+                  <Text style={styles.raleway}>» Steps to be followed by participants for logging in:</Text>
+                ) : null
+              }
             </ListItem>
             <ListItem style={styles.hrbreak}>
-              <Text style={styles.details}>1)  Username: firstname_recieptno (Ex. aditya_007){"\n"}{"\t"}{"\t"} Default Password: vp_2019</Text>
+              <Text style={styles.details}>1)  Username: firstname_receiptno (Ex. aditya_007){"\n"}{"\t"}{"\t"} Default Password: vp_2019</Text>
             </ListItem>
             <ListItem style={styles.hrbreak}>
-              <Text style={styles.details}>2)  Check your details in profile.</Text>
+              <Text style={styles.details}>2)  For participants registered online, Receipt No. and Unique ID for entry will be provided on the day of the event.</Text>
+            </ListItem>
+
+            <ListItem style={styles.hrbreak}>
+              {
+                this.state.fontLoaded ? (
+                  <Text style={styles.raleway}>» To be followed on the day of the event:</Text>
+                ) : null
+              }
             </ListItem>
             <ListItem style={styles.hrbreak}>
-              <Text style={styles.details}>3)  Update information or password if required.</Text>
+              <Text style={styles.details}>1)  Bring your receipt.</Text>
             </ListItem>
             <ListItem style={styles.hrbreak}>
-              <Text style={styles.details}>4)  App is mandatory on the day of the event.</Text>
+              <Text style={styles.details}>2)  Bring your valid ID proof.</Text>
             </ListItem>
             <ListItem style={styles.hrbreak}>
-              <Text style={styles.details}>5)  Pass will be generated on the day of the event after reporting.</Text>
+              <Text style={styles.details}>3)  Check your details in profile.</Text>
+            </ListItem>
+            <ListItem style={styles.hrbreak}>
+              <Text style={styles.details}>4)  App is mandatory on the day of the event.(For iOS users, login can be done using the website.)</Text>
+            </ListItem>
+            <ListItem style={styles.hrbreak}>
+              <Text style={styles.details}>5)  Pass will be generated after reporting.</Text>
             </ListItem>
           </List>
         </Content>
@@ -98,9 +117,16 @@ const styles = StyleSheet.create({
     paddingHorizontal: 15,
     color: 'white',
     borderLeftColor: 'white',
-    borderRightColor: 'white'
+    borderRightColor: 'white',
+    fontFamily: 'Raleway',
+    fontSize: 25,
+    color: 'white'
   },
   details: {
-    color: 'white'
-  }
+    color: 'white',
+  },
+  raleway: {
+    color: 'white',
+    fontFamily: 'Raleway'
+  },
 });

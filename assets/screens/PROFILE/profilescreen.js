@@ -37,69 +37,67 @@ class login extends React.Component {
     }
   }
 
-  loginp = () =>{
-		const {username, password, rcpt_no} = this.state;
+  loginp = () => {
+    const { username, password, rcpt_no } = this.state;
     // let reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/ ;
-    let reg = /^[a-z0-9_@.]*$/;
-		if(username==""){
-			alert("Please enter Email address");
+    let reg = /^[a-z0-9_.]*$/;
+    if (username == "") {
+      alert("Please enter Username");
       //this.setState({email:'Please enter Email address'})
       return false;
-			}
-		else if(reg.test(username) === false)
-		{
-		alert("Incorrect Username");
-		//this.setState({email:'Email is Not Correct'})
-		return false;
-		  }
-    else if(password==""){
+    }
+    else if (reg.test(username) === false) {
+      alert("Incorrect Username");
+      //this.setState({email:'Email is Not Correct'})
+      return false;
+    }
+    else if (password == "") {
       alert("Please Enter Password");
-    //this.setState({email:'Please enter password'})
-    return false;
+      //this.setState({email:'Please enter password'})
+      return false;
     }
-    else if(reg.test(password) === false){
+    else if (reg.test(password) === false) {
       alert("Incorrect Password");
-    //this.setState({email:'Please enter password'})
-    return false;
+      //this.setState({email:'Please enter password'})
+      return false;
     }
-    else if((reg.test(username) === true) && (reg.test(password) === true))
-    {
+    else if ((reg.test(username) === true) && (reg.test(password) === true)) {
       // alert("Successfully Logged in");
       //this.setState({email:'Please enter password'})
-      fetch('https://www.edcviit.com/vishwapreneur/phps/loginapp.php',{
-			method:'post',
-			header:{
-				'Accept': 'application/json',
-				'Content-type': 'application/json'
-			},
-			body:JSON.stringify({
-				// we will pass our input data to server
-				username: username,
-        password: password,
-			})
-			
-    })
-		.then((response) => response.json())
-		 .then((responseJson)=>{  
-       console.log(responseJson);
-			 if(responseJson["success"] == true){
-				 // redirect to profile page
-				 //alert("Successfully Login");
-         this.props.navigation.navigate("PROFILE", {ScreenName: responseJson["name"], Receiptno: responseJson["rcpt_no"], Phoneno: responseJson["phone"], Category: responseJson["category"], Email: responseJson["email"], Amtrem: responseJson["balance"],});
-       }
-       else{
-				 alert("Wrong Login Details");
-			 }
-		 })
-		 .catch((error)=>{
-		 console.error(error);
-		 });
-		}
-		Keyboard.dismiss();
+      fetch('https://www.edcviit.com/vishwapreneur/phps/loginapp.php', {
+        method: 'post',
+        header: {
+          'Accept': 'application/json',
+          'Content-type': 'application/json'
+        },
+        body: JSON.stringify({
+          // we will pass our input data to server
+          username: username,
+          password: password,
+        })
+
+      })
+        .then((response) => response.json())
+        .then((responseJson) => {
+          console.log(responseJson);
+          if (responseJson["success"] == true) {
+            // redirect to profile page
+            //alert("Successfully Login");
+            this.props.navigation.navigate("PROFILE", { ScreenName: responseJson["name"], UniqueID: responseJson["uid"], Receiptno: responseJson["rcpt_no"], Phoneno: responseJson["phone"], Category: responseJson["category"], Email: responseJson["email"], Amtrem: responseJson["balance"], Report: responseJson["reported"] });
+          } 
+          else {
+            alert("Wrong Login Details");
+          }
+        })
+        .catch((error) => {
+          console.error(error);
+        });
     }
-	// else{
-		  
-	// }
+    Keyboard.dismiss();
+  }
+  // else{
+
+  // }
   render() {
     return (
       <Container
@@ -130,15 +128,15 @@ class login extends React.Component {
 
                 <Text style={styles.title}>Login</Text>
                 <TextInput
-                  placeholder="Enter Email"
+                  placeholder="Enter Username"
                   style={styles.input}
-                  onChangeText={username => this.setState({username})}
+                  onChangeText={username => this.setState({ username })}
                 />
                 <TextInput
                   style={styles.input}
                   placeholder="Enter Password"
                   secureTextEntry
-	                onChangeText={password => this.setState({password})}
+                  onChangeText={password => this.setState({ password })}
                 />
                 <Button onPress={this.loginp} block style={styles.loginButton} >
                   <Text
@@ -178,10 +176,10 @@ class login extends React.Component {
 }
 
 const AppStackNavigation = createStackNavigator({
-  
-  LOGIN: { screen: login},
-  PROFILE: {screen: afterlogin},
-  REGISTER: {screen: register},
+
+  LOGIN: { screen: login },
+  PROFILE: { screen: afterlogin },
+  REGISTER: { screen: register },
 });
 export default createAppContainer(AppStackNavigation);
 

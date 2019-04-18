@@ -12,20 +12,26 @@ export default class afterlogin extends React.Component {
     await Font.loadAsync({
       'Batmanforever': require('../../fonts/batmfa.ttf'),
     });
+    await Font.loadAsync({
+      'Raleway': require('../../fonts/Raleway-ExtraBold.ttf'),
+    });
 
     this.setState({ fontLoaded: true });
   }
 
+
   constructor(props) {
-    super(props)
-    this.state={
+    super(props);
+    this.state = {
       ScreenName: this.props.navigation.state.params.ScreenName,
       Receiptno: this.props.navigation.state.params.Receiptno,
       Phoneno: this.props.navigation.state.params.Phoneno,
       Category: this.props.navigation.state.params.Category,
       Email: this.props.navigation.state.params.Email,
       Amtrem: this.props.navigation.state.params.Amtrem,
-    }
+      Report: this.props.navigation.state.params.Report,
+      UniqueID: this.props.navigation.state.params.UniqueID
+    };
   }
 
   render() {
@@ -55,9 +61,13 @@ export default class afterlogin extends React.Component {
         </Header>
 
         <Content style={{ padding: 25 }}>
-        
+
           <View style={{ alignItems: 'center' }}>
-            <Text style={styles.textWithShadow}>Hi, {this.state.ScreenName}</Text>
+            {
+              this.state.fontLoaded ? (
+                <Text style={styles.textWithShadow}>Hi, {this.state.ScreenName}</Text>
+              ) : null
+            }
           </View>
 
           <View style={{ paddingBottom: 15, paddingLeft: 15, marginVertical: 25 }}>
@@ -69,14 +79,39 @@ export default class afterlogin extends React.Component {
           </View>
 
           <View style={{ paddingHorizontal: 25, borderBottomColor: '#aaaaaa', borderBottomWidth: 1.5 }} />
+            {
+              (this.state.Category == 'Convention-VIP' && this.state.Report == 'Reported') ?(
+                <View style={styles.vipcontainer}>
+                  <View style={{ alignItems: 'center', justifyContent: 'center' }}>
+                    <Text style={styles.vippasscontent}>
+                    Your Unique ID is :   {this.state.UniqueID}
+                    </Text>
+                  </View>
+                </View>
+              ): null
+            }
+            {
+              (this.state.Category == 'Convention-Regular' && this.state.Report == 'Reported') ?(
+                <View style={styles.regcontainer}>
+                  <View style={{ alignItems: 'center', justifyContent: 'center' }}>
+                    <Text style={styles.regpasscontent}>Your Unique ID is :   {this.state.UniqueID}
+                    </Text>
+                  </View>
+                </View>
+              ): null
+            }
+            {
+              (this.state.Report == 'Not Reported') ?(
+                <View style={styles.mccontainer}>
+                  <View style={{ alignItems: 'center', justifyContent: 'center' }}>
+                    <Text style={styles.mcpasscontent}>
+                      Your pass will appear when you report for the event.
+                    </Text>
+                  </View>
+                </View>
+              ): null
+            }
 
-          <View style={styles.incontainer}>
-            <View style={{ alignItems: 'center', justifyContent: 'center' }}>
-              <Text style={styles.passcontent}>
-                Your pass will appear here on the day of the event.
-              </Text>
-            </View>
-          </View>
         </Content>
       </Container>
     );
@@ -86,10 +121,10 @@ export default class afterlogin extends React.Component {
 const styles = StyleSheet.create({
   textWithShadow: {
     textShadowColor: 'rgba(250, 250, 250, .5)',
-    textShadowOffset: { width: -1, height: 1 },
+    
     fontSize: 35,
     color: 'white',
-    fontWeight: '500',
+    fontFamily: 'Raleway',
   },
   content: {
     fontWeight: '200',
@@ -97,7 +132,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
     paddingBottom: 10,
   },
-  incontainer: {
+  mccontainer: {
     flex: 1,
     flexDirection: 'column',
     justifyContent: 'flex-start',
@@ -111,10 +146,51 @@ const styles = StyleSheet.create({
     backgroundColor: '#444',
     marginBottom: 50,
   },
-  passcontent: {
-    fontSize: 18,
+  vipcontainer: {
+    flex: 1,
+    flexDirection: 'column',
+    justifyContent: 'flex-start',
+    borderColor: '#F97F51',
+    borderStyle: 'dashed',
+    borderWidth: 5,
+    borderRadius: 7,
+    position: 'relative',
+    padding: 100,
+    marginTop: 50,
+    backgroundColor: 'rgba(255,215,0,.8)',
+    marginBottom: 50,
+  },
+  regcontainer: {
+    flex: 1,
+    flexDirection: 'column',
+    justifyContent: 'flex-start',
+    borderColor: '#F97F51',
+    borderStyle: 'dashed',
+    borderWidth: 5,
+    borderRadius: 7,
+    position: 'relative',
+    padding: 100,
+    marginTop: 50,
+    backgroundColor: '#0b40c9',
+    marginBottom: 50,
+  },
+  vippasscontent: {
+    fontSize: 30,
     textAlign: 'center',
     paddingBottom: 15,
-    color: 'gray',
+    color: 'black',
   },
+  regpasscontent: {
+    fontSize: 30,
+    textAlign: 'center',
+    paddingBottom: 15,
+    color: 'white',
+  },
+  mcpasscontent: {
+    fontSize: 30,
+    textAlign: 'center',
+    paddingBottom: 15,
+    color: 'white',
+  },
+
 });

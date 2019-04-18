@@ -11,9 +11,6 @@ import {
 import {
   Content,
   Container,
-  H1,
-  H2,
-  H3,
   Button,
   Card,
   Header,
@@ -32,7 +29,13 @@ export default class Vishwapreneur extends React.Component {
   async componentDidMount() {
     await Font.loadAsync({
       'Batmanforever': require('../../fonts/batmfa.ttf'),
+      'Raleway': require('../../fonts/Raleway-Bold.ttf'),
+      'Ralewaybold': require('../../fonts/Raleway-ExtraBold.ttf')
     });
+    // await Font.loadAsync({
+    // });
+    // await Font.loadAsync({
+    // });
 
     this.setState({ fontLoaded: true });
   }
@@ -139,7 +142,13 @@ export default class Vishwapreneur extends React.Component {
           </View>
 
           <View style={{ alignItems: 'center', paddingBottom: 15 }}>
-            <H1 style={{ color: 'white' }}>About Us</H1>
+            {
+              this.state.fontLoaded ? (
+                <Text style={styles.inststyle}>
+                  About Us
+                </Text>
+              ) : null
+            }
           </View>
           <View style={{ paddingHorizontal: 15, borderBottomColor: '#aaaaaa', borderBottomWidth: 1, alignSelf: 'stretch' }}>
             <Text style={{ fontSize: 18, textAlign: 'center', paddingBottom: 15, color: 'white' }}>
@@ -157,8 +166,14 @@ export default class Vishwapreneur extends React.Component {
             </Text>
           </View>
 
-          <View style={{ alignItems: 'center', paddingVertical: 25 }}>
-            <H1 style={{ color: 'white' }}>Sessions</H1>
+          <View style={{ alignItems: 'center', paddingBottom: 15, marginTop: 15 }}>
+            {
+              this.state.fontLoaded ? (
+                <Text style={styles.inststyle}>
+                  Sessions
+                </Text>
+              ) : null
+            }
           </View>
 
           <Card style={{ marginBottom: 20, borderRadius: 8 }}>
@@ -171,10 +186,15 @@ export default class Vishwapreneur extends React.Component {
                 justifyContent: 'center',
                 padding: 10,
               }}>
-              <View style={{ alignItems: 'center', }}>
-                <Text
-                  style={styles.textWithShadow}>
-                  KEYNOTES
+              <View style={{ alignItems: 'center' }}>
+                <Text style={styles.textWithShadow}>
+                  {
+                    this.state.fontLoaded ? (
+                      <Text style={styles.raleway}>
+                        KEYNOTES
+                      </Text>
+                    ) : null
+                  }
                 </Text>
               </View>
               <Text />
@@ -195,10 +215,15 @@ export default class Vishwapreneur extends React.Component {
                 justifyContent: 'center',
                 padding: 10,
               }}>
-              <View style={{ alignItems: 'center', }}>
-                <Text
-                  style={styles.textWithShadow}>
-                  PANEL DISCUSSION
+              <View style={{ alignItems: 'center' }}>
+                <Text style={styles.textWithShadow}>
+                  {
+                    this.state.fontLoaded ? (
+                      <Text style={styles.raleway}>
+                        PANEL DISCUSSIONS
+                      </Text>
+                    ) : null
+                  }
                 </Text>
               </View>
               <Text />
@@ -219,10 +244,15 @@ export default class Vishwapreneur extends React.Component {
                 justifyContent: 'center',
                 padding: 10,
               }}>
-              <View style={{ alignItems: 'center', }}>
-                <Text
-                  style={styles.textWithShadow}>
-                  OPENFLOOR
+              <View style={{ alignItems: 'center' }}>
+                <Text style={styles.textWithShadow}>
+                  {
+                    this.state.fontLoaded ? (
+                      <Text style={styles.raleway}>
+                        OPENFLOOR
+                      </Text>
+                    ) : null
+                  }
                 </Text>
               </View>
               <Text />
@@ -243,17 +273,28 @@ export default class Vishwapreneur extends React.Component {
                 justifyContent: 'center',
                 padding: 10,
               }}>
-              <View style={{ alignItems: 'center', }}>
-                <Text
-                  style={styles.textWithShadow}>
-                  COMPETITIONS
+              <View style={{ alignItems: 'center' }}>
+                <Text style={styles.textWithShadow}>
+                  {
+                    this.state.fontLoaded ? (
+                      <Text style={styles.raleway}>
+                        COMPETITIONS
+                      </Text>
+                    ) : null
+                  }
                 </Text>
               </View>
             </ImageBackground>
           </Card>
           <View style={styles.horiscroll}>
-            <View style={{ alignItems: 'center', paddingBottom: 10 }}>
-              <H1 style={{ color: 'white' }}>Our Sponsors</H1>
+            <View style={{ alignItems: 'center', paddingBottom: 15 }}>
+              {
+                this.state.fontLoaded ? (
+                  <Text style={styles.inststyle}>
+                    Our Sponsors
+                </Text>
+                ) : null
+              }
             </View>
             <ScrollView horizontal={true}>
               <Sponsors imageUri={require('../../images/sponsors/ims.jpg')} />
@@ -261,27 +302,35 @@ export default class Vishwapreneur extends React.Component {
               <Sponsors imageUri={require('../../images/sponsors/protons.jpg')} />
               <Sponsors imageUri={require('../../images/sponsors/infinitygate.png')} />
               <Sponsors imageUri={require('../../images/sponsors/budhani.png')} />
-              <Sponsors imageUri={require('../../images/sponsors/ktm.png')} />
+              <Sponsors imageUri={require('../../images/sponsors/ktm.jpg')} />
               <Sponsors imageUri={require('../../images/sponsors/educad.png')} />
               <Sponsors imageUri={require('../../images/sponsors/box8.jpg')} />
               <Sponsors imageUri={require('../../images/sponsors/Gateway.png')} />
               <Sponsors imageUri={require('../../images/sponsors/aarnell.jpg')} />
               <Sponsors imageUri={require('../../images/sponsors/chaitanya.png')} />
+              <Sponsors imageUri={require('../../images/sponsors/bom.png')} />
+              <Sponsors imageUri={require('../../images/sponsors/NIIT.png')} />
             </ScrollView>
           </View>
-          <View style={{ alignItems: 'center', paddingBottom: 3 }}>
-            <H1 style={{ color: 'white' }}>Our Partners</H1>
+          <View style={{ alignItems: 'center', paddingBottom: 15 }}>
+            {
+              this.state.fontLoaded ? (
+                <Text style={styles.inststyle}>
+                  Our Partners
+                </Text>
+              ) : null
+            }
           </View>
           <View style={styles.horiscroll}>
             <ScrollView horizontal={true}>
               <Sponsors imageUri={require('../../images/sponsors/multi-fit-black.png')} name="Fitness Partner" />
               <Sponsors imageUri={require('../../images/sponsors/the-souled-store.jpg')} name="Gifting Partner" />
               <Sponsors imageUri={require('../../images/sponsors/pune-open-coffee-club.png')} name="Ecosystem Partner" />
-              <Sponsors imageUri={require('../../images/sponsors/campus-times1.png')} name="Youth Partner"/>
-              <Sponsors imageUri={require('../../images/sponsors/elecer.jpg')} name="Startup Partner"/>
-              <Sponsors imageUri={require('../../images/sponsors/grihneelogo.png')} name="Startup Partner"/>
-              <Sponsors imageUri={require('../../images/sponsors/avanjas.jpg')} name="Startup Partner"/>
-              <Sponsors imageUri={require('../../images/sponsors/daftar.jpg')} name="Co-working space Partner"/>
+              <Sponsors imageUri={require('../../images/sponsors/campus-times1.png')} name="Youth Partner" />
+              <Sponsors imageUri={require('../../images/sponsors/elecer.jpg')} name="Startup Partner" />
+              <Sponsors imageUri={require('../../images/sponsors/grihneelogo.png')} name="Startup Partner" />
+              <Sponsors imageUri={require('../../images/sponsors/avanjas.jpg')} name="Startup Partner" />
+              <Sponsors imageUri={require('../../images/sponsors/daftar.jpg')} name="Co-working space Partner" />
             </ScrollView>
           </View>
         </Content>
@@ -297,10 +346,13 @@ const styles = StyleSheet.create({
     color: 'white'
   },
   textWithShadow: {
-    textShadowColor: 'rgba(60, 60, 60, .9)',
+    textShadowColor: 'rgba(100, 100, 100, .9)',
     textShadowOffset: { width: 2, height: 2 },
     fontSize: 30,
     color: 'white',
+  },
+  raleway: {
+    fontFamily: 'Ralewaybold'
   },
   contentFont: {
     textShadowColor: 'rgba(60, 60, 60, 1)',
@@ -332,5 +384,10 @@ const styles = StyleSheet.create({
     width: null,
     height: null,
     resizeMode: 'cover'
-  }
+  },
+  inststyle: {
+    fontSize: 25,
+    fontFamily: 'Raleway',
+    color: 'white'
+  },
 });
