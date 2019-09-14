@@ -63,7 +63,7 @@ export default class InstructionsScreen extends Component {
             <ListItem style={styles.hrbreak}>
               {
                 this.state.fontLoaded ? (
-                  <Text style={styles.raleway}>» Steps to be followed by participants for logging in:</Text>
+                  <Text style={styles.raleway}>» Steps to be followed by participants for signing in:</Text>
                 ) : null
               }
             </ListItem>
