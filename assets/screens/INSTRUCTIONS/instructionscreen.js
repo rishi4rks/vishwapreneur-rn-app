@@ -88,7 +88,7 @@ export default class InstructionsScreen extends Component {
               <Text style={styles.details}>2)  Bring your valid ID proof.</Text>
             </ListItem>
             <ListItem style={styles.hrbreak}>
-              <Text style={styles.details}>3)  Check your details in profile.</Text>
+              <Text style={styles.details}>3)  Check your details in profile by signing in.</Text>
             </ListItem>
             <ListItem style={styles.hrbreak}>
               <Text style={styles.details}>4)  App is mandatory on the day of the event.(For iOS users, login can be done using the website.)</Text>
