@@ -68,7 +68,7 @@ export default class InstructionsScreen extends Component {
               }
             </ListItem>
             <ListItem style={styles.hrbreak}>
-              <Text style={styles.details}>1)  Username: firstname_receiptno (Ex. aditya_007){"\n"}{"\t"}{"\t"} Default Password: vp_2019</Text>
+              <Text style={styles.details}>1)  Username: firstname_receiptno (Ex. rishikesh_007){"\n"}{"\t"}{"\t"} Default Password: vp_2019</Text>
             </ListItem>
             <ListItem style={styles.hrbreak}>
               <Text style={styles.details}>2)  For participants registered online, Receipt No. and Unique ID for entry will be provided on the day of the event.</Text>
@@ -77,7 +77,7 @@ export default class InstructionsScreen extends Component {
             <ListItem style={styles.hrbreak}>
               {
                 this.state.fontLoaded ? (
-                  <Text style={styles.raleway}>» To be followed on the day of the event:</Text>
+                  <Text style={styles.raleway}>» Instructions to be followed on the day of the event:</Text>
                 ) : null
               }
             </ListItem>
@@ -85,7 +85,7 @@ export default class InstructionsScreen extends Component {
               <Text style={styles.details}>1)  Bring your receipt.</Text>
             </ListItem>
             <ListItem style={styles.hrbreak}>
-              <Text style={styles.details}>2)  Bring your valid ID proof.</Text>
+              <Text style={styles.details}>2)  Carry your valid ID proof.</Text>
             </ListItem>
             <ListItem style={styles.hrbreak}>
               <Text style={styles.details}>3)  Check your details in profile.</Text>
